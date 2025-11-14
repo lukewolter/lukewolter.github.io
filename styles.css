@@ -1,0 +1,6 @@
+img {
+  max-width: 100%;
+  height: auto;
+  display: block; /* Prevents extra spacing below the image */
+  margin: 0 auto; /* Centers the image if needed */
+}
