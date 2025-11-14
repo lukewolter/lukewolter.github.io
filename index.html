@@ -3,163 +3,87 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Luke Wolter's Product Management Portfolio - Showcasing fintech, AI, and innovative projects.">
-    <title>Luke Wolter's Portfolio</title>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <meta name="description" content="Luke Wolter's Product Portfolio: Experienced CPO candidate showcasing AI-driven projects and product management expertise.">
+    <meta name="keywords" content="product management, AI innovation, fintech, SaaS, Agile, Luke Wolter">
+    <title>Luke Wolter's Product Portfolio</title>
+    <!-- SEO Schema Markup -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "Person",
+      "name": "Luke Wolter",
+      "jobTitle": "Product Management Leader",
+      "description": "25+ years in fintech, media, and SaaS. Driven $200M+ revenue growth.",
+      "url": "https://lukewolter.github.io/"
+    }
+    </script>
+    <!-- Bootstrap CDN for responsive design -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+    <!-- Custom Styles -->
     <style>
-        body {
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-            margin: 0;
-            padding: 0;
-            background-color: #f4f7fa;
-            color: #333;
-            line-height: 1.6;
-        }
-        header {
-            background: linear-gradient(135deg, #007bff, #0056b3);
-            color: white;
-            padding: 60px 20px;
-            text-align: center;
-            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
-        }
-        header h1 {
-            margin: 0;
-            font-size: 2.5em;
-        }
-        nav {
-            margin-top: 20px;
-        }
-        nav a {
-            color: white;
-            text-decoration: none;
-            margin: 0 15px;
-            font-weight: bold;
-            transition: color 0.3s;
-        }
-        nav a:hover {
-            color: #ffd700;
-        }
-        section {
-            max-width: 1200px;
-            margin: 40px auto;
-            padding: 20px;
-            background: white;
-            border-radius: 8px;
-            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
-            transition: transform 0.3s;
-        }
-        section:hover {
-            transform: translateY(-5px);
-        }
-        h2, h3 {
-            color: #007bff;
-        }
-        ul {
-            list-style-type: none;
-            padding: 0;
-        }
-        ul li {
-            margin-bottom: 10px;
-            position: relative;
-            padding-left: 25px;
-        }
-        ul li::before {
-            content: '\f058';
-            font-family: 'Font Awesome 6 Free';
-            font-weight: 900;
-            position: absolute;
-            left: 0;
-            color: #007bff;
-        }
-        .project-img {
-            max-width: 100%;
-            border-radius: 8px;
-            margin: 20px 0;
-            box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
-        }
-        .links a {
-            display: inline-block;
-            margin: 10px 10px 0 0;
-            padding: 10px 20px;
-            background: #007bff;
-            color: white;
-            text-decoration: none;
-            border-radius: 5px;
-            transition: background 0.3s;
-        }
-        .links a:hover {
-            background: #0056b3;
-        }
-        footer {
-            background: #333;
-            color: white;
-            text-align: center;
-            padding: 20px;
-            margin-top: 40px;
-        }
-        @media (max-width: 768px) {
-            header {
-                padding: 40px 10px;
-            }
-            section {
-                margin: 20px;
-                padding: 15px;
-            }
-        }
+        body { font-family: 'Arial', sans-serif; line-height: 1.6; color: #333; }
+        .navbar { background-color: #f8f9fa; }
+        .hero { background-color: #e9ecef; padding: 60px 0; text-align: center; }
+        .project-card { border: 1px solid #ddd; border-radius: 8px; padding: 20px; margin-bottom: 20px; }
+        img { max-width: 100%; height: auto; loading: lazy; }
+        .cta-btn { margin-top: 20px; }
     </style>
+    <!-- Google Analytics -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=UA-XXXXXX-X"></script> <!-- Replace with your GA ID -->
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'UA-XXXXXX-X');
+    </script>
 </head>
 <body>
-    <header>
-        <h1>Luke Wolter's Portfolio</h1>
-        <nav>
-            <a href="#about"><i class="fas fa-user"></i> About</a>
-            <a href="#projects"><i class="fas fa-briefcase"></i> Projects</a>
-            <a href="#skills"><i class="fas fa-tools"></i> Skills</a>
-            <a href="https://www.linkedin.com/in/lukewolter" target="_blank"><i class="fab fa-linkedin"></i> LinkedIn</a>
-            <a href="mailto:lukewolter@gmail.com"><i class="fas fa-envelope"></i> Contact</a>
-        </nav>
-    </header>
 
-    <section id="about">
-        <h2>About Me</h2>
-        <p>Hello! I'm Luke Wolter, a seasoned Product Management leader with over 25 years of experience in fintech, media, consulting, and SaaS startups. I've driven $200M+ in revenue growth, scaled cross-functional teams, and led innovative product strategies at companies like AOL, Yahoo, and EY. My expertise includes Agile/Lean methodologies, AI-driven innovation, strategic vision, competitive analysis, go-to-market strategies, and P&L responsibility. I'm passionate about leveraging technology to solve complex problems and deliver user-centric solutions.</p>
-        <p>This portfolio showcases my personal projects, demonstrating my skills in product development, AI integration, market research, and end-to-end execution.</p>
-    </section>
+    <!-- Navigation -->
+    <nav class="navbar navbar-expand-lg navbar-light sticky-top">
+        <div class="container">
+            <a class="navbar-brand" href="#">Luke Wolter's Portfolio</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item"><a class="nav-link" href="#about">About Me</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#projects">Projects</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#skills">Skills</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#contact">Contact</a></li>
+                </ul>
+            </div>
+        </div>
+    </nav>
 
-    <section id="projects">
-        <h2>Featured Projects</h2>
-        <h3>The Rock Lore Vault</h3>
-        <img src="rocklore-screenshot.png" alt="Screenshot of The Rock Lore Vault website" class="project-img">
-        <p>A personal AI-powered project exploring the wild, wacky histories behind iconic rock songs. This demonstrates my proficiency in using AI tools for content creation, web development, and analytics-driven strategy.</p>
-        <ul>
-            <li><strong>Overview:</strong> Built exclusively with AI tools to create business (content strategy), tech (web app), and media (videos, podcasts) assets. The platform includes a responsive website, YouTube channel, and Spotify podcast.</li>
-            <li><strong>Challenges:</strong> Automating end-to-end content pipelines while ensuring high engagement in a niche market.</li>
-            <li><strong>Strategy & Execution:</strong> Orchestrated AI workflows with n8n, OpenAI GPT-4, Grok, DALL-E, and pictory.ai for script generation, image creation, and video/podcast production. Developed a MERN-stack website using devin.ai, hosted on AWS EC2 Lightsail, with integrations for YouTube and Spotify APIs.</li>
-            <li><strong>Results:</strong> Conducted market research via Google Analytics, Looker Studio, and Amplitude, achieving early engagement metrics like 50%+ video watch time and growing audience.</li>
-            <li><strong>Skills Demonstrated:</strong> Product roadmap planning, AI automation, data-driven decision-making, full-stack development, SEO optimization, and multimedia content strategy.</li>
-        </ul>
-        <div class="links">
-            <a href="http://therocklorevault.com/" target="_blank">Website</a>
-            <a href="https://www.youtube.com/@TheRockLoreVault" target="_blank">YouTube Channel</a>
-            <a href="https://open.spotify.com/show/1POPwB6teXOFzfuuE49KVZ?si=zdcjkHYrTmaFgNspMy4xCg" target="_blank">Spotify Podcast</a>            
-            <a href="https://github.com/lukewolter/therocklorevault" target="_blank">GitHub Repo</a>
-            <a href="https://github.com/lukewolter/therocklorevault/blob/main/README.md" target="_blank">Project README</a>
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="container">
+            <h1>Welcome to Luke Wolter's Product Portfolio</h1>
+            <p>Driving innovation in product management with AI and data-driven strategies.</p>
+            <a href="#projects" class="btn btn-primary cta-btn">Explore Projects</a>
         </div>
     </section>
 
-    <section id="skills">
-        <h2>Skills & Tech Stack</h2>
-        <ul>
-            <li><strong>Product Management:</strong> Strategic planning, roadmap development, user personas, A/B testing, KPIs (e.g., ARR, NPS, retention).</li>
-            <li><strong>Methodologies:</strong> Agile, Scrum, Lean, Waterfall.</li>
-            <li><strong>Tools & Technologies:</strong> Jira, Confluence, Figma, Google Analytics, Amplitude, Looker Studio, AWS, MERN Stack (MongoDB, Express.js, React.js, Node.js).</li>
-            <li><strong>AI & Automation:</strong> OpenAI GPT-4, Grok, DALL-E, n8n, devin.ai, pictory.ai.</li>
-            <li><strong>Soft Skills:</strong> Cross-functional leadership, stakeholder management, negotiation, innovation.</li>
-        </ul>
+    <!-- About Me -->
+    <section id="about" class="container py-5">
+        <h2>About Me</h2>
+        <p>Hello! I'm Luke Wolter, a seasoned Product Management leader with over 25 years of experience in fintech, media, consulting, and SaaS startups. I've driven $200M+ in revenue growth, scaled cross-functional teams, and led innovative product strategies at companies like AOL, Yahoo, and EY.</p>
+        <p>My expertise includes Agile/Lean methodologies, AI-driven innovation, strategic vision, competitive analysis, go-to-market strategies, and P&L responsibility. I'm passionate about leveraging technology to solve complex problems and deliver user-centric solutions.</p>
+        <p>This portfolio showcases my personal projects, demonstrating my skills in product development, AI integration, market research, and end-to-end execution.</p>
     </section>
 
-    <footer>
-        <p>&copy; 2025 Luke Wolter. Built with GitHub Pages. Last updated: November 14, 2025.</p>
-    </footer>
-</body>
-</html>
+    <!-- Featured Projects -->
+    <section id="projects" class="container py-5 bg-light">
+        <h2>Featured Projects</h2>
+        <div class="project-card">
+            <h3>The Rock Lore Vault</h3>
+            <img src="path/to/rock-lore-vault-screenshot.jpg" alt="Screenshot of The Rock Lore Vault website" loading="lazy"> <!-- Replace with actual image URL -->
+            <p>A personal AI-powered project exploring the wild, wacky histories behind iconic rock songs. Solve content discovery challenges with AI, boosting engagement by 50%+.</p>
+            <ul>
+                <li><strong>Overview:</strong> Built exclusively with AI tools for content strategy, web app, videos, and podcasts. Includes responsive website, YouTube channel, and Spotify podcast.</li>
+                <li><strong>Challenges:</strong> Automating pipelines for niche market engagement.</li>
+                <li><strong>Strategy & Execution:</strong> Used n8n, OpenAI GPT-4, Grok, DALL-E, pictory.ai; MERN stack via devin.ai on AWS; API integrations.</li>
+                <li><strong>Results:</strong> 50%+ video watch time via Google Analytics, Looker Studio, Amplitude.</li>
+                <li><strong>Skills Demonstrated:</strong> Roadmap planning, AI automation, data decisions, full-stack dev
