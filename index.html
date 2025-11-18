@@ -31,17 +31,6 @@
       --navy: #0a1a2f;
       --blue: #0055ff;
       --gold: #f5b921;
-      --gray-50: #f9fafb;
-      --gray-100: #f1f5f9;
-      --gray-900: #111827;
-      --text: #1f2937;
-      --bg: #ffffff;
-      --card-bg: #ffffff;
-    }
-    [data-theme="dark"] {
-      --navy: #0f172a;
-      --gray-50: #0f172a;
-      --gray-100: #1e293b;
       --gray-900: #f8fafc;
       --text: #e2e8f0;
       --bg: #0f172a;
@@ -53,32 +42,9 @@
       line-height: 1.6;
       color: var(--text);
       background: var(--bg);
-      transition: background 0.4s, color 0.4s;
       overflow-x: hidden;
     }
-    h1, h2, h3, h4 { line-height: 1.1; font-weight: 900; color: var(--gray-900); }
-    [data-theme="dark"] h1, [data-theme="dark"] h2, [data-theme="dark"] h3, [data-theme="dark"] h4 { color: white; }
-
-    /* Dark Mode Toggle */
-    .theme-toggle {
-      position: fixed;
-      top: 20px;
-      right: 20px;
-      z-index: 1000;
-      background: rgba(255,255,255,0.15);
-      backdrop-filter: blur(10px);
-      border: 1px solid rgba(255,255,255,0.2);
-      width: 56px;
-      height: 56px;
-      border-radius: 50%;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      cursor: pointer;
-      transition: all 0.3s;
-    }
-    .theme-toggle:hover { transform: scale(1.1); }
-    .theme-toggle i { font-size: 1.5rem; color: white; }
+    h1, h2, h3, h4 { line-height: 1.1; font-weight: 900; color: white; }
 
     /* Hero */
     .hero {
@@ -99,16 +65,55 @@
       background: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 600"><path fill="%23ffffff08" d="M0,160L48,192C96,224,192,288,288,304C384,320,480,288,576,245.3C672,202.7,768,149.3,864,144C960,138.7,1056,181.3,1152,197.3C1248,213.3,1344,202.7,1392,197.3L1440,192L1440,600L0,600Z"></path></svg>') bottom / cover no-repeat;
     }
     .hero-content { position: relative; z-index: 2; max-width: 1200px; width: 100%; }
-    .hero h1 { font-size: clamp(4rem, 10vw, 8rem); letter-spacing: -4px; margin: 0 0 0.5rem; }
-    .hero .highlight { color: var(--gold); -webkit-text-stroke: 2px var(--gold); paint-order: stroke fill; }
+    .hero h1 { 
+      font-size: clamp(4rem, 10vw, 8rem); 
+      letter-spacing: -4px; 
+      margin: 0 0 0.5rem; 
+    }
+    .hero .highlight { 
+      color: white;
+      -webkit-text-stroke: 3px var(--gold); 
+      paint-order: stroke fill;
+      text-shadow: 0 0 40px rgba(245,185,33,0.6);
+    }
     .badge { 
       display: inline-block; background: rgba(245,185,33,0.15); color: var(--gold); 
       padding: 0.5rem 1.2rem; border-radius: 50px; font-weight: 700; font-size: 1rem; 
       border: 1px solid rgba(245,185,33,0.3); margin-bottom: 1.5rem;
     }
     .lead { font-size: clamp(1.4rem, 4vw, 1.8rem); max-width: 900px; margin: 2rem auto; opacity: 0.95; }
-    .metrics { display: grid; grid-template-columns: repeat(auto-fit, minmax(180px, 1fr)); gap: 2rem; margin: 4rem auto; max-width: 1000px; }
-    .metric-num { font-size: 3.8rem; font-weight: 900; color: var(--gold); line-height: 1; }
+
+    /* Creative Metrics – Glassmorphism Cards */
+    .metrics {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+      gap: 2rem;
+      margin: 4rem auto;
+      max-width: 1000px;
+    }
+    .metric {
+      background: rgba(255,255,255,0.05);
+      backdrop-filter: blur(12px);
+      border: 1px solid rgba(255,255,255,0.1);
+      border-left: 6px solid var(--gold);
+      border-radius: 16px;
+      padding: 2rem 1.5rem;
+      text-align: center;
+      transition: all 0.4s ease;
+    }
+    .metric:hover {
+      transform: translateY(-12px);
+      box-shadow: 0 20px 40px rgba(245,185,33,0.2);
+      border-color: var(--gold);
+    }
+    .metric-num {
+      font-size: 4rem;
+      font-weight: 900;
+      color: var(--gold);
+      line-height: 1;
+      text-shadow: 0 0 20px rgba(245,185,33,0.4);
+    }
+    .metric label { font-size: 1.1rem; opacity: 0.9; margin-top: 0.5rem; display: block; }
 
     /* Buttons */
     .btn-primary {
@@ -138,7 +143,7 @@
     }
     .impact-card:hover { transform: translateY(-12px); box-shadow: 0 30px 60px rgba(0,0,0,0.15); }
 
-    /* Extended Timeline */
+    /* Timeline */
     .timeline { position: relative; max-width: 1000px; margin: 0 auto; }
     .timeline::before { content: ''; position: absolute; width: 4px; background: var(--gold); top: 0; bottom: 0; left: 50%; margin-left: -2px; }
     .tl-item { padding: 2rem 3rem; position: relative; width: 50%; }
@@ -150,6 +155,28 @@
     .tl-content { background: var(--card-bg); color: var(--text); padding: 2rem; border-radius: 12px; box-shadow: 0 10px 30px rgba(0,0,0,0.1); }
 
     .cta { background: linear-gradient(135deg, var(--blue), #0044cc); color: white; text-align: center; padding: 140px 0; }
+
+    /* Certifications Section */
+    .certifications {
+      background: rgba(30,41,59,0.8);
+      padding: 100px 0;
+    }
+    .certs-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+      gap: 2rem;
+      max-width: 1200px;
+      margin: 3rem auto 0;
+    }
+    .cert-card {
+      background: rgba(255,255,255,0.05);
+      border: 1px solid rgba(245,185,33,0.2);
+      padding: 1.8rem;
+      border-radius: 12px;
+      text-align: center;
+    }
+    .cert-card h4 { color: var(--gold); margin-bottom: 0.5rem; }
+
     footer { background: #000; color: #666; text-align: center; padding: 3rem 0; }
 
     @media (max-width: 768px) {
@@ -160,12 +187,7 @@
     }
   </style>
 </head>
-<body data-theme="dark"> <!-- Default to dark (executives love it) -->
-
-  <!-- Dark Mode Toggle -->
-  <div class="theme-toggle" id="themeToggle" aria-label="Toggle dark mode">
-    <i class="fas fa-moon"></i>
-  </div>
+<body>
 
   <!-- Hero -->
   <section class="hero">
@@ -177,10 +199,10 @@
       </p>
 
       <div class="metrics">
-        <div class="metric"><div class="metric-num">$200M+</div><div>Revenue Created</div></div>
-        <div class="metric"><div class="metric-num">8+ yrs</div><div>EY Global Leadership</div></div>
-        <div class="metric"><div class="metric-num">$9B</div><div>Portfolio Oversight</div></div>
-        <div class="metric"><div class="metric-num">AI-First</div><div>GenAI Product Leader</div></div>
+        <div class="metric"><div class="metric-num">$200M+</div><label>Revenue Created</label></div>
+        <div class="metric"><div class="metric-num">8+ yrs</div><label>EY Global Leadership</label></div>
+        <div class="metric"><div class="metric-num">$9B</div><label>Portfolio Oversight</label></div>
+        <div class="metric"><div class="metric-num">AI-First</div><label>GenAI Product Leader</label></div>
       </div>
 
       <div style="margin-top: 3rem;">
@@ -236,6 +258,21 @@
     </div>
   </section>
 
+  <!-- Certifications (from your LinkedIn) -->
+  <section class="certifications">
+    <div class="container">
+      <h2 class="section-title">Certifications & Credentials</h2>
+      <div class="certs-grid">
+        <div class="cert-card"><h4>Pragmatic Marketing Certified – Level 6</h4><p>Pragmatic Institute</p></div>
+        <div class="cert-card"><h4>Certified Scrum Product Owner (CSPO)</h4><p>Scrum Alliance</p></div>
+        <div class="cert-card"><h4>Generative AI for Business Leaders</h4><p>MIT Sloan Executive Education</p></div>
+        <div class="cert-card"><h4>Leading with Finance</h4><p>Harvard Business School Online</p></div>
+        <div class="cert-card"><h4>AI Strategy</h4><p>University of Oxford – Saïd Business School</p></div>
+        <div class="cert-card"><h4>Lean Six Sigma Green Belt</h4><p>IASSC</p></div>
+      </div>
+    </div>
+  </section>
+
   <!-- CTA -->
   <section class="cta">
     <div class="container">
@@ -251,33 +288,5 @@
       © 2025 Luke Wolter | Atlanta, GA | <a href="tel:+17702417798" style="color:var(--gold);">770-241-7798</a>
     </div>
   </footer>
-
-  <!-- Font Awesome for toggle icons -->
-  <script src="https://kit.fontawesome.com/1b3e9e2b5f.js" crossorigin="anonymous"></script>
-  <script>
-    const toggle = document.getElementById('themeToggle');
-    const body = document.body;
-    const icon = toggle.querySelector('i');
-
-    // Load saved theme
-    if (localStorage.getItem('theme') === 'light' || (!localStorage.getItem('theme') && window.matchMedia('(prefers-color-scheme: light)').matches)) {
-      body.setAttribute('data-theme', 'light');
-      icon.classList.replace('fa-moon', 'fa-sun');
-    } else {
-      body.set0Attribute('data-theme', 'dark');
-    }
-
-    toggle.addEventListener('click', () => {
-      if (body.getAttribute('data-theme') === 'dark') {
-        body.setAttribute('data-theme', 'light');
-        icon.classList.replace('fa-moon', 'fa-sun');
-        localStorage.setItem('theme', 'light');
-      } else {
-        body.setAttribute('data-theme', 'dark');
-        icon.classList.replace('fa-sun', 'fa-moon');
-        localStorage.setItem('theme', 'dark');
-      }
-    });
-  </script>
 </body>
 </html>
