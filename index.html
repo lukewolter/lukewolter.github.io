@@ -203,12 +203,16 @@
       .metric { padding: 1.8rem 1rem; min-height: 130px; }
     }
     .logo-row img {
+        height: 30px;
+      opacity: 0.6;
         filter: grayscale(100%);
         /* Optional: add a smooth hover effect to restore color */
-        transition: filter 0.3s ease;
+        transition: filter 0.4s ease;
     }
     .logo-row img:hover {
+      opacity: 1;
         filter: grayscale(0%);
+        transform: translateY(-2px);
     }
     .hover-lift {
     transition: all 0.3s ease;
@@ -344,16 +348,21 @@
         <a href="mailto:lukewolter@gmail.com" class="btn-primary">Let's Talk</a>
  <!--       <a href="Luke_Wolter_VP_Product_Briefing_2025.pdf" class="btn-primary btn-outline" download>Download Briefing Deck (PDF)</a> -->
       </div>
+        
+          <div class="logo-row py-5">
+              <div class="container text-center">
+                  <small class="text-white-50 d-block mb-4">Trusted by leaders at</small>
+                  <div class="d-flex flex-wrap justify-content-center align-items-center gap-5">
+                      <img src="https://logo.clearbit.com/marines.com"     alt="US Marines"   class="exp-logo">
+                      <img src="https://logo.clearbit.com/accenture.com"  alt="Accenture"    class="exp-logo">
+                      <img src="https://logo.clearbit.com/ey.com"          alt="EY"           class="exp-logo">
+                      <img src="https://logo.clearbit.com/aol.com"         alt="AOL"          class="exp-logo">
+                      <img src="https://logo.clearbit.com/yahoo.com"        alt="Yahoo"        class="exp-logo">
+                      <img src="https://logo.clearbit.com/equifax.com"      alt="Equifax"      class="exp-logo">
+                  </div>
+              </div>
+          </div>
 
-        <div class="logo-row mt-5">
-            <p style="margin-top: 4rem; opacity: 0.7; font-size:1.1rem;"></p>                
-            <img src="https://logo.clearbit.com/marines.com" alt="US Marines">
-            <img src="https://logo.clearbit.com/accenture.com" alt="Accenture">
-            <img src="https://logo.clearbit.com/ey.com" alt="EY">
-            <img src="https://logo.clearbit.com/aol.com" alt="AOL">
-            <img src="https://logo.clearbit.com/yahoo.com" alt="Yahoo">
-            <img src="https://logo.clearbit.com/equifax.com" alt="Equifax">
-        </div>
     </div>
   </section>
 
