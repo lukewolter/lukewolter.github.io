@@ -214,13 +214,116 @@
     transition: all 0.3s ease;
 }
 .hover-lift:hover {
-    transform: translateY(-8px);
-    background: rgba(255,255,255,0.15) !important;
-    box-shadow: 0 10px 30px rgba(0,0,0,0.4);
-}
+        transform: translateY(-8px);
+        background: rgba(255,255,255,0.15) !important;
+        box-shadow: 0 10px 30px rgba(0,0,0,0.4);
+    }
+
+    /* Sticky Navigation */
+    nav {
+      position: fixed;
+      top: 0;
+      left: 0;
+      right: 0;
+      background: rgba(10, 26, 47, 0.95);
+      backdrop-filter: blur(10px);
+      z-index: 1000;
+      padding: 1rem 0;
+      border-bottom: 1px solid rgba(245, 185, 33, 0.2);
+      box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3);
+    }
+    nav .container {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 0 2rem;
+    }
+    nav .logo {
+      font-size: 1.5rem;
+      font-weight: 900;
+      color: white;
+      text-decoration: none;
+    }
+    nav .logo span {
+      color: var(--gold);
+    }
+    nav ul {
+      list-style: none;
+      display: flex;
+      gap: 2rem;
+      margin: 0;
+      padding: 0;
+    }
+    nav a {
+      color: var(--text);
+      text-decoration: none;
+      font-weight: 600;
+      font-size: 0.95rem;
+      transition: color 0.3s ease;
+      padding: 0.5rem 0;
+    }
+    nav a:hover {
+      color: var(--gold);
+    }
+    .nav-toggle {
+      display: none;
+      background: none;
+      border: none;
+      color: white;
+      font-size: 1.5rem;
+      cursor: pointer;
+    }
+
+    @media (max-width: 768px) {
+      nav ul {
+        position: fixed;
+        top: 60px;
+        left: -100%;
+        width: 100%;
+        height: calc(100vh - 60px);
+        background: rgba(10, 26, 47, 0.98);
+        flex-direction: column;
+        gap: 0;
+        padding: 2rem 0;
+        transition: left 0.3s ease;
+      }
+      nav ul.active {
+        left: 0;
+      }
+      nav ul li {
+        width: 100%;
+        text-align: center;
+        padding: 1rem 0;
+        border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+      }
+      .nav-toggle {
+        display: block;
+      }
+      .tl-item { width: 100%; padding-left: 50px; padding-right: 20px; text-align: left !important; }
+      .tl-item::after { left: -12px !important; }
+      .timeline::before { left: 16px; }
+      .metrics { grid-template-columns: 1fr 1fr; gap: 1.5rem; }
+      .metric { padding: 1.8rem 1rem; min-height: 130px; }
+    }
   </style>
 </head>
 <body>
+
+  <!-- Sticky Navigation -->
+  <nav>
+    <div class="container">
+      <a href="#" class="logo">Luke <span>Wolter</span></a>
+      <button class="nav-toggle" onclick="document.querySelector('nav ul').classList.toggle('active')">☰</button>
+      <ul>
+        <li><a href="#track-record" onclick="document.querySelector('nav ul').classList.remove('active')">Track Record</a></li>
+        <li><a href="#case-studies" onclick="document.querySelector('nav ul').classList.remove('active')">Case Studies</a></li>
+        <li><a href="#career-timeline" onclick="document.querySelector('nav ul').classList.remove('active')">Career Timeline</a></li>
+        <li><a href="#certifications" onclick="document.querySelector('nav ul').classList.remove('active')">Certifications</a></li>
+        <li><a href="#ai-toolbelt" onclick="document.querySelector('nav ul').classList.remove('active')">AI Toolbelt</a></li>
+        <li><a href="#contact" onclick="document.querySelector('nav ul').classList.remove('active')">Contact</a></li>
+      </ul>
+    </div>
+  </nav>
 
   <!-- Hero -->
   <section class="hero">
@@ -255,9 +358,9 @@
   </section>
 
   <!-- Impact Highlights -->
-  <section>
+  <section id="track-record">
     <div class="container">
-      <h2 class="section-title">Proven $200M+ Revenue Impact</h2>
+      <h2 class="section-title">Track Record</h2>
       <div class="impact-grid">
         <div class="impact-card">
           <h3>Yahoo! – $150M+ Branded Media Platform</h3>
@@ -280,7 +383,7 @@
   </section>
 
   <!-- Case Studies -->
-  <section style="background: linear-gradient(135deg, #1e293b 0%, #0f172a 100%); padding: 120px 0;">
+  <section id="case-studies" style="background: linear-gradient(135deg, #1e293b 0%, #0f172a 100%); padding: 120px 0;">
     <div class="container">
       <h2 class="section-title" style="color: white;">Case Studies</h2>
       <div class="impact-grid">
@@ -321,7 +424,7 @@
   </section>
 
   <!-- Full Career Timeline -->
-  <section class="bg-dark">
+  <section id="career-timeline" class="bg-dark">
     <div class="container">
       <h2 class="section-title" style="color:white;">Career Timeline</h2>
       <div class="timeline">
@@ -338,7 +441,7 @@
   </section>
 
   <!-- Certifications – Updated Nov 18, 2025 from your LinkedIn -->
-  <section class="certifications">
+  <section id="certifications" class="certifications">
     <div class="container">
       <h2 class="section-title">Certifications</h2>
       <div class="certs-grid">
@@ -354,7 +457,7 @@
 
 
 <!-- AI TOOLBELT SHOWCASE – 2025 AI-FIRST PRODUCT LEADER -->
-<section style="padding: 100px 0; background: rgba(30,41,59,0.8);">
+<section id="ai-toolbelt" style="padding: 100px 0; background: rgba(30,41,59,0.8);">
     <div class="container">
         <div style="text-align: center; margin-bottom: 4rem; max-width: 900px; margin-left: auto; margin-right: auto;">
             <h2 class="section-title">2025 AI Toolbelt I Actually Use in Production</h2>
@@ -411,7 +514,7 @@
     </section>
 
   <!-- CTA -->
-    <section class="cta">
+    <section id="contact" class="cta">
         <div class="container">
         <h2 style="font-size: 3.8rem; margin-bottom: 2rem;">Ready to build your digital product?</h2>
         <p style="font-size: 1.5rem; max-width: 700px; margin: 0 auto 3rem;">Let's talk AI strategy, product scaling, and organizational design.</p>
