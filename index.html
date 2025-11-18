@@ -196,6 +196,14 @@
       .metrics { grid-template-columns: 1fr 1fr; gap: 1.5rem; }
       .metric { padding: 1.8rem 1rem; min-height: 130px; }
     }
+    .logo-row img {
+        filter: grayscale(100%);
+        /* Optional: add a smooth hover effect to restore color */
+        transition: filter 0.3s ease;
+    }
+    .logo-row img:hover {
+        filter: grayscale(0%);
+    }
   </style>
 </head>
 <body>
@@ -206,7 +214,7 @@
       <h1>LUKE <span class="highlight">WOLTER</span></h1>
       <div class="badge">Product Management Leader • MBA</div>
       <p class="lead">
-        I build and scale AI-powered product organizations that deliver $100M+ revenue at global scale.
+        I build and scale AI-powered SaaS products and organizations delivering revenue at global scale.
       </p>
 
       <div class="metrics">
@@ -222,11 +230,11 @@
 
         <div class="logo-row mt-5">
             <p style="margin-top: 4rem; opacity: 0.7; font-size:1.1rem;"></p>                
-            <img src="https://logo.clearbit.com/marines.com" alt="US Marines"> 
-            <img src="https://logo.clearbit.com/accenture.com" alt="Accenture"> 
-            <img src="https://logo.clearbit.com/ey.com" alt="EY"> 
-            <img src="https://logo.clearbit.com/aol.com" alt="AOL"> 
-            <img src="https://logo.clearbit.com/yahoo.com" alt="Yahoo"> 
+            <img src="https://logo.clearbit.com/marines.com" alt="US Marines">
+            <img src="https://logo.clearbit.com/accenture.com" alt="Accenture">
+            <img src="https://logo.clearbit.com/ey.com" alt="EY">
+            <img src="https://logo.clearbit.com/aol.com" alt="AOL">
+            <img src="https://logo.clearbit.com/yahoo.com" alt="Yahoo">
             <img src="https://logo.clearbit.com/equifax.com" alt="Equifax">
         </div>
     </div>
@@ -262,13 +270,13 @@
     <div class="container">
       <h2 class="section-title" style="color:white;">Career Timeline</h2>
       <div class="timeline">
-        <div class="tl-item left"><div class="tl-content"><h4>EY — Global Solution Management Director</h4><p class="small opacity-75">2017 – Present</p><p>Built foundation for $9B+ Managed Services business • Led GenAI/ML fraud & SOC 2 automation</p></div></div>
+        <div class="tl-item left"><div class="tl-content"><h4>EY — Global Solution Management Director</h4><p class="small opacity-75">2017 – Present</p><p>Built product lifecycle foundations for $9B+ B2B business</p></div></div>
         <div class="tl-item right"><div class="tl-content"><h4>Equifax — Senior Product Manager</h4><p class="small opacity-75">2015 – 2017</p><p>Replatformed Equifax.com & MyEquifax • 30% engagement lift • 10M+ monthly users</p></div></div>
-        <div class="tl-item left"><div class="tl-content"><h4>AOL — GM & Head of Product</h4><p class="small opacity-75">2011 – 2015</p><p>$50M profitable revenue growth • Launched 5 media brands</p></div></div>
-        <div class="tl-item right"><div class="tl-content"><h4>Streamroll — Founder & Head of Product</h4><p class="small opacity-75">2010 – 2011</p><p>Bootstrapped SaaS to 1,300+ customers in year one</p></div></div>
-        <div class="tl-item left"><div class="tl-content"><h4>Yahoo! — Sr Director Product Management</h4><p class="small opacity-75">2002 – 2010</p><p>$150M+ branded solutions business with GM, Toyota, Southwest</p></div></div>
+        <div class="tl-item left"><div class="tl-content"><h4>AOL — GM & Head of Product</h4><p class="small opacity-75">2011 – 2015</p><p>$50M profitable revenue growth • Launched 5 media brands • created a new ComScore audience leader</p></div></div>
+        <div class="tl-item right"><div class="tl-content"><h4>Streamroll — Founder & Head of Product</h4><p class="small opacity-75">2010 – 2011</p><p>Bootstrapped a SaaS prodcut to 1,300+ customers in year one</p></div></div>
+        <div class="tl-item left"><div class="tl-content"><h4>Yahoo! — Sr Director Product Management</h4><p class="small opacity-75">2002 – 2010</p><p>$150M+ branded solutions business creating joint prodcuts with customer such as GM, Toyota, Southwest</p></div></div>
         <div class="tl-item right"><div class="tl-content"><h4>XOR Data Exchange — Principal Product Manager</h4><p class="small opacity-75">2001 – 2002</p><p>Led Citgo.com & Empire BCBS patient portal launches</p></div></div>
-        <div class="tl-item left"><div class="tl-content"><h4>Accenture — Consulting Manager</h4><p class="small opacity-75">1996 – 2001</p><p>Led $5M+ digital transformations for Chase, CNA</p></div></div>
+        <div class="tl-item left"><div class="tl-content"><h4>Accenture — Consulting Manager</h4><p class="small opacity-75">1996 – 2001</p><p>Led $5M+ digital transformations for Chase, CNA, and American Express</p></div></div>
         <div class="tl-item right"><div class="tl-content"><h4>U.S. Marine Corps — NCO</h4><p class="small opacity-75">1992 – 1998</p><p>Leadership under fire • National Defense Service Medal</p></div></div>
       </div>
     </div>
@@ -298,7 +306,49 @@
       <a href="https://www.linkedin.com/in/lukewolter" target="_blank" class="btn-primary btn-outline">LinkedIn</a>
     </div>
   </section>
+<!-- AI TOOLBELT SHOWCASE – 2025 AI-FIRST PRODUCT LEADER -->
+<section class="py-5 section-dark text-white">
+    <div class="container">
+        <div class="row text-center mb-5">
+            <div class="col-lg-8 offset-lg-2">
+                <h2 class="display-5 fw-bold">2025 AI Toolbelt I Actually Use in Production</h2>
+                <p class="lead opacity-90">I don’t just talk about agentic AI — I ship with it daily. Here are the exact tools I use to 10x velocity for myself and my teams.</p>
+            </div>
+        </div>
 
+        <div class="row g-4 justify-content-center">
+
+            <!-- Grok -->
+            <div class="col-md-3 col-6">
+                <div class="text-center p-4 bg-white bg-opacity-10 rounded-3 border border-white border-opacity-20 hover-lift">
+                    <img src="https://api.logo.clearbit.com/v1/domain/logo/grok.com?size=120" alt="Grok by xAI" class="mb-3" style="height:60px;">
+                    <h5 class="fw-bold text-white">Grok (xAI)</h5>
+                    <small class="opacity-80">Primary reasoning engine for strategy, roadmaps, and code architecture</small>
+                </div>
+            </div>
+
+            <!-- devin.ai -->
+            <div class="col-md-3 col-6">
+                <div class="text-center p-4 bg-white bg-opacity-10 rounded-3 border border-white border-opacity-20 hover-lift">
+                    <img src="https://devin.ai/logo.png" alt="Devin.ai" class="mb-3 rounded" style="height:60px;">
+                    <h5 class="fw-bold text-white">devin.ai</h5>
+                    <small class="opacity-80">Autonomous engineer that built the entire MERN stack for The Rock Lore Vault</small>
+                </div>
+            </div>
+
+            <!-- n8n -->
+            <div class="col-md-3 col-6">
+                <div class="text-center p-4 bg-white bg-opacity-10 rounded-3 border border-white border-opacity-20 hover-lift">
+                    <img src="https://n8n.io/logo.png" alt="n8n" class="mb-3" style="height:60px;">
+                    <h5 class="fw-bold text-white">n8n</h5>
+                    <small class="opacity-80">100% of my automation pipelines — content, analytics, CRM sync</small>
+                </div>
+            </div>
+
+            <!-- Microsoft Copilot Studio -->
+            <div class="col-md-3 col-6">
+                <div class="text-center p-4 bg-white bg-opacity-10 rounded-3 border border-white border-opacity-20 hover-lift">
+                    <img src="https://learn.microsoft.com/en-us/power-virtual-agents/media/logo-copilot-studio.png" alt="Copilot Studio" class="mb-3" style
   <footer>
     <div class="container">
       © 2025 Luke Wolter | Atlanta, GA | <a href="tel:+17702417798" style="color:var(--gold);">770-241-7798</a>
