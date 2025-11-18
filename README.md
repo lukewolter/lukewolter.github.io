@@ -2,7 +2,7 @@
 # Luke Wolter's Portfolio
 
 ## About Me
-- Email: lukewolter@example.com
+- Email: lukewolter@gmail.com
 - LinkedIn: [lukewolter](https://www.linkedin.com/in/lukewolter)
 - GitHub: [lukewolter](https://github.com/lukewolter)
 
