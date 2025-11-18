@@ -14,7 +14,7 @@
     "@context": "https://schema.org",
     "@type": "Person",
     "name": "Luke Wolter",
-    "jobTitle": "Digital Product Management Leader |', 'AI-First Executive",
+    "jobTitle": "Digital Product Management Leader, AI-First Executive",
     "url": "https://lukewolter.github.io",
     "sameAs": ["https://www.linkedin.com/in/lukewolter","https://twitter.com/luke_wolter"],
     "alumniOf": [
@@ -47,12 +47,22 @@
     h1, h2, h3, h4 { line-height: 1.1; font-weight: 900; color: white; }
 
     /* Hero */
+    .hero {
+      position: relative;
+      min-height: 100vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+      padding: 2rem;
+      background: linear-gradient(135deg, var(--blue) 0%, var(--navy) 100%);
+    }
     .hero h1 { 
       font-size: clamp(4rem, 10vw, 8rem); 
       letter-spacing: -4px; 
       margin: 0 0 0.5rem;
       color: white;
-      text-shadow: 0 4px 20px rgba(0,0,0,0.5); /* Add shadow for better contrast */
+      text-shadow: 0 4px 20px rgba(0,0,0,0.5);
     }
     .hero .highlight { 
       color: white;
@@ -206,7 +216,7 @@
 .hover-lift:hover {
     transform: translateY(-8px);
     background: rgba(255,255,255,0.15) !important;
-    box-shadow: 0 10px 30px rgba  (0,0,0,0.4);
+    box-shadow: 0 10px 30px rgba(0,0,0,0.4);
 }
   </style>
 </head>
@@ -278,7 +288,7 @@
         <div class="tl-item right"><div class="tl-content"><h4>Equifax — Senior Product Manager</h4><p class="small opacity-75">2015 – 2017</p><p>Replatformed Equifax.com & MyEquifax • 30% engagement lift • 10M+ monthly users</p></div></div>
         <div class="tl-item left"><div class="tl-content"><h4>AOL — GM & Head of Product</h4><p class="small opacity-75">2011 – 2015</p><p>$50M profitable revenue growth • Launched 5 media brands • created a new ComScore audience leader</p></div></div>
         <div class="tl-item right"><div class="tl-content"><h4>Streamroll — Founder & Head of Product</h4><p class="small opacity-75">2010 – 2011</p><p>Bootstrapped a SaaS prodcut to 1,300+ customers in year one</p></div></div>
-        <div class="tl-item left"><div class="tl-content"><h4>Yahoo! — Sr Director Product Management</h4><p class="small opacity-75">2002 – 2010</p><p>$150M+ branded solutions business creating joint prodcuts with customer such as GM, Toyota, Southwest</p></div></div>
+        <div class="tl-item left"><div class="tl-content"><h4>Yahoo! — Sr Director Product Management</h4><p class="small opacity-75">2002 – 2010</p><p>$150M+ branded solutions business creating joint products with customers such as GM, Toyota, Southwest</p></div></div>
         <div class="tl-item right"><div class="tl-content"><h4>XOR Data Exchange — Principal Product Manager</h4><p class="small opacity-75">2001 – 2002</p><p>Led Citgo.com & Empire BCBS patient portal launches</p></div></div>
         <div class="tl-item left"><div class="tl-content"><h4>Accenture — Consulting Manager</h4><p class="small opacity-75">1996 – 2001</p><p>Led $5M+ digital transformations for Chase, CNA, and American Express</p></div></div>
         <div class="tl-item right"><div class="tl-content"><h4>U.S. Marine Corps — NCO</h4><p class="small opacity-75">1992 – 1998</p><p>Leadership under fire • National Defense Service Medal</p></div></div>
@@ -303,61 +313,59 @@
 
 
 <!-- AI TOOLBELT SHOWCASE – 2025 AI-FIRST PRODUCT LEADER -->
-<section class="py-5 section-dark text-white">
+<section style="padding: 100px 0; background: rgba(30,41,59,0.8);">
     <div class="container">
-        <div class="row text-center mb-5">
-            <div class="col-lg-8 offset-lg-2">
-                <h2 class="display-5 fw-bold">2025 AI Toolbelt I Actually Use in Production</h2>
-                <p class="lead opacity-90">I don’t just talk about agentic AI — I ship with it daily. Here are the exact tools I use to 10x velocity for myself and my teams.</p>
-            </div>
+        <div style="text-align: center; margin-bottom: 4rem; max-width: 900px; margin-left: auto; margin-right: auto;">
+            <h2 class="section-title">2025 AI Toolbelt I Actually Use in Production</h2>
+            <p class="lead">I don't just talk about agentic AI — I ship with it daily. Here are the exact tools I use to 10x velocity for myself and my teams.</p>
         </div>
 
-        <div class="row g-4 justify-content-center">
+        <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 2rem; max-width: 1200px; margin: 0 auto;">
 
             <!-- Grok -->
-            <div class="col-md-3 col-6">
-                <div class="text-center p-4 bg-white bg-opacity-10 rounded-3 border border-white border-opacity-20 hover-lift">
-                    <img src="https://api.logo.clearbit.com/v1/domain/logo/grok.com?size=120" alt="Grok by xAI" class="mb-3" style="height:60px;">
-                    <h5 class="fw-bold text-white">Grok (xAI)</h5>
-                    <small class="opacity-80">Primary reasoning engine for strategy, roadmaps, and code architecture</small>
+            <div style="text-align: center; padding: 2rem; background: rgba(255,255,255,0.05); border-radius: 12px; border: 1px solid rgba(255,255,255,0.2);" class="hover-lift">
+                <div style="height: 60px; display: flex; align-items: center; justify-content: center; margin-bottom: 1rem;">
+                    <h3 style="color: var(--gold); font-size: 2.5rem;">Grok</h3>
                 </div>
+                <h5 style="color: white; margin-bottom: 0.5rem;">Grok (xAI)</h5>
+                <small style="opacity: 0.8;">Primary reasoning engine for strategy, roadmaps, and code architecture</small>
             </div>
 
             <!-- devin.ai -->
-            <div class="col-md-3 col-6">
-                <div class="text-center p-4 bg-white bg-opacity-10 rounded-3 border border-white border-opacity-20 hover-lift">
-                    <img src="https://devin.ai/logo.png" alt="Devin.ai" class="mb-3 rounded" style="height:60px;">
-                    <h5 class="fw-bold text-white">devin.ai</h5>
-                    <small class="opacity-80">Autonomous engineer that built the entire MERN stack for The Rock Lore Vault</small>
+            <div style="text-align: center; padding: 2rem; background: rgba(255,255,255,0.05); border-radius: 12px; border: 1px solid rgba(255,255,255,0.2);" class="hover-lift">
+                <div style="height: 60px; display: flex; align-items: center; justify-content: center; margin-bottom: 1rem;">
+                    <h3 style="color: var(--gold); font-size: 2.5rem;">Devin</h3>
                 </div>
+                <h5 style="color: white; margin-bottom: 0.5rem;">devin.ai</h5>
+                <small style="opacity: 0.8;">Autonomous engineer that built entire MERN stack for The Rock Lore Vault</small>
             </div>
 
             <!-- n8n -->
-            <div class="col-md-3 col-6">
-                <div class="text-center p-4 bg-white bg-opacity-10 rounded-3 border border-white border-opacity-20 hover-lift">
-                    <img src="https://n8n.io/logo.png" alt="n8n" class="mb-3" style="height:60px;">
-                    <h5 class="fw-bold text-white">n8n</h5>
-                    <small class="opacity-80">100% of my automation pipelines — content, analytics, CRM sync</small>
+            <div style="text-align: center; padding: 2rem; background: rgba(255,255,255,0.05); border-radius: 12px; border: 1px solid rgba(255,255,255,0.2);" class="hover-lift">
+                <div style="height: 60px; display: flex; align-items: center; justify-content: center; margin-bottom: 1rem;">
+                    <h3 style="color: var(--gold); font-size: 2.5rem;">n8n</h3>
                 </div>
+                <h5 style="color: white; margin-bottom: 0.5rem;">n8n</h5>
+                <small style="opacity: 0.8;">100% of my automation pipelines — content, analytics, CRM sync</small>
             </div>
 
             <!-- Microsoft Copilot Studio -->
-            <div class="col-md-3 col-6">
-                <div class="text-center p-4 bg-white bg-opacity-10 rounded-3 border border-white border-opacity-20 hover-lift">
-                    <img src="https://learn.microsoft.com/en-us/power-virtual-agents/media/logo-copilot-studio.png" alt="Copilot Studio" class="mb-3" style="height:60px;">
-                    <h5 class="fw-bold text-white">Copilot Studio</h5>
-                    <small class="opacity-80">Enterprise-grade agentic workflows I deploy inside Fortune-500 clients</small>
+            <div style="text-align: center; padding: 2rem; background: rgba(255,255,255,0.05); border-radius: 12px; border: 1px solid rgba(255,255,255,0.2);" class="hover-lift">
+                <div style="height: 60px; display: flex; align-items: center; justify-content: center; margin-bottom: 1rem;">
+                    <h3 style="color: var(--gold); font-size: 2rem;">Copilot</h3>
                 </div>
+                <h5 style="color: white; margin-bottom: 0.5rem;">Copilot Studio</h5>
+                <small style="opacity: 0.8;">Enterprise-grade agentic workflows I deploy inside Fortune-500 clients</small>
             </div>
 
         </div>
 
-        <div class="text-center mt-5">
-            <p class="fs-5 opacity-90 mb-3">
+        <div style="text-align: center; margin-top: 4rem;">
+            <p style="font-size: 1.3rem; opacity: 0.9; margin-bottom: 2rem;">
                 <strong>Result:</strong> Personal projects ship in <u>days instead of months</u> · Enterprise teams I lead routinely cut feature delivery time by <u>70%+</u> using the same stack.
             </p>
-            <a href="https://www.linkedin.com/in/lukewolter" target="_blank" class="btn btn-outline-light btn-lg">
-                <i class="fab fa-linkedin"></i> See LinkedIn posts of me building live with these tools
+            <a href="https://www.linkedin.com/in/lukewolter" target="_blank" class="btn-primary btn-outline">
+                See LinkedIn posts of me building live with these tools
             </a>
         </div>
     </div>
