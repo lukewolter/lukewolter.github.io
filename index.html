@@ -3,9 +3,9 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="description" content="Luke Wolter – VP Product Management | $350M+ Revenue Created | Ex-AOL, Yahoo!, EY | AI-First Product Executive">
+  <meta name="description" content="Luke Wolter – Product Management Leader | $200M+ Revenue Created | Ex-AOL, Yahoo!, EY, Equifax | AI-First Product Executive">
   <meta name="robots" content="index, follow">
-  <title>Luke Wolter | VP Product | $350M+ Revenue | Ex-Yahoo!, AOL, EY</title>
+  <title>Luke Wolter | Digital Product Leader | $200M+ Revenue | Ex-Yahoo!, AOL, EY</title>
   <link rel="canonical" href="https://lukewolter.github.io"/>
 
   <!-- Schema.org -->
@@ -14,7 +14,7 @@
     "@context": "https://schema.org",
     "@type": "Person",
     "name": "Luke Wolter",
-    "jobTitle": "VP Product Management | AI-First Executive",
+    "jobTitle": "Digital Product Management Leader | AI-First Executive",
     "url": "https://lukewolter.github.io",
     "sameAs": ["https://www.linkedin.com/in/lukewolter","https://twitter.com/luke_wolter"],
     "alumniOf": [
@@ -32,22 +32,57 @@
       --blue: #0055ff;
       --gold: #f5b921;
       --gray-50: #f9fafb;
+      --gray-100: #f1f5f9;
       --gray-900: #111827;
+      --text: #1f2937;
+      --bg: #ffffff;
+      --card-bg: #ffffff;
+    }
+    [data-theme="dark"] {
+      --navy: #0f172a;
+      --gray-50: #0f172a;
+      --gray-100: #1e293b;
+      --gray-900: #f8fafc;
+      --text: #e2e8f0;
+      --bg: #0f172a;
+      --card-bg: #1e293b;
     }
     * { margin:0; padding:0; box-sizing:border-box; }
     body {
       font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
       line-height: 1.6;
-      color: var(--gray-900);
-      background: #fff;
+      color: var(--text);
+      background: var(--bg);
+      transition: background 0.4s, color 0.4s;
       overflow-x: hidden;
     }
-    h1, h2, h3, h4 { line-height: 1.1; font-weight: 900; }
+    h1, h2, h3, h4 { line-height: 1.1; font-weight: 900; color: var(--gray-900); }
+    [data-theme="dark"] h1, [data-theme="dark"] h2, [data-theme="dark"] h3, [data-theme="dark"] h4 { color: white; }
 
-    /* ===== HERO – FIXED & PERFECT ===== */
+    /* Dark Mode Toggle */
+    .theme-toggle {
+      position: fixed;
+      top: 20px;
+      right: 20px;
+      z-index: 1000;
+      background: rgba(255,255,255,0.15);
+      backdrop-filter: blur(10px);
+      border: 1px solid rgba(255,255,255,0.2);
+      width: 56px;
+      height: 56px;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      cursor: pointer;
+      transition: all 0.3s;
+    }
+    .theme-toggle:hover { transform: scale(1.1); }
+    .theme-toggle i { font-size: 1.5rem; color: white; }
+
+    /* Hero */
     .hero {
-      min-height: 100vh;
-      min-height: 100dvh; /* better on mobile */
+      min-height: 100dvh;
       background: linear-gradient(160deg, var(--navy) 0%, #000 100%);
       color: white;
       display: flex;
@@ -62,124 +97,48 @@
       position: absolute;
       inset: 0;
       background: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 600"><path fill="%23ffffff08" d="M0,160L48,192C96,224,192,288,288,304C384,320,480,288,576,245.3C672,202.7,768,149.3,864,144C960,138.7,1056,181.3,1152,197.3C1248,213.3,1344,202.7,1392,197.3L1440,192L1440,600L0,600Z"></path></svg>') bottom / cover no-repeat;
-      pointer-events: none;
     }
-    .hero-content {
-      position: relative;
-      z-index: 2;
-      max-width: 1200px;
-      width: 100%;
-      padding: 2rem 0;
+    .hero-content { position: relative; z-index: 2; max-width: 1200px; width: 100%; }
+    .hero h1 { font-size: clamp(4rem, 10vw, 8rem); letter-spacing: -4px; margin: 0 0 0.5rem; }
+    .hero .highlight { color: var(--gold); -webkit-text-stroke: 2px var(--gold); paint-order: stroke fill; }
+    .badge { 
+      display: inline-block; background: rgba(245,185,33,0.15); color: var(--gold); 
+      padding: 0.5rem 1.2rem; border-radius: 50px; font-weight: 700; font-size: 1rem; 
+      border: 1px solid rgba(245,185,33,0.3); margin-bottom: 1.5rem;
     }
-    .hero h1 {
-      font-size: clamp(4rem, 10vw, 8rem);
-      font-weight: 900;
-      letter-spacing: -4px;
-      margin: 0 0 0.5rem;
-    }
-    .hero .highlight {
-      color: var(--gold);
-      -webkit-text-stroke: 2px var(--gold);
-      paint-order: stroke fill;
-    }
-    .badge {
-      display: inline-block;
-      background: rgba(245,185,33,0.15);
-      color: var(--gold);
-      padding: 0.5rem 1.2rem;
-      border-radius: 50px;
-      font-weight: 700;
-      font-size: 1rem;
-      border: 1px solid rgba(245,185,33,0.3);
-      margin-bottom: 1.5rem;
-    }
-    .lead {
-      font-size: clamp(1.4rem, 4vw, 1.8rem);
-      max-width: 900px;
-      margin: 2rem auto;
-      opacity: 0.95;
-    }
-
-    /* Metrics */
-    .metrics {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
-      gap: 2rem;
-      margin: 4rem auto;
-      max-width: 1000px;
-    }
-    .metric-num {
-      font-size: 3.8rem;
-      font-weight: 900;
-      color: var(--gold);
-      line-height: 1;
-    }
+    .lead { font-size: clamp(1.4rem, 4vw, 1.8rem); max-width: 900px; margin: 2rem auto; opacity: 0.95; }
+    .metrics { display: grid; grid-template-columns: repeat(auto-fit, minmax(180px, 1fr)); gap: 2rem; margin: 4rem auto; max-width: 1000px; }
+    .metric-num { font-size: 3.8rem; font-weight: 900; color: var(--gold); line-height: 1; }
 
     /* Buttons */
     .btn-primary {
-      background: var(--gold);
-      color: #000;
-      padding: 1.1rem 2.8rem;
-      border-radius: 50px;
-      font-weight: 800;
-      font-size: 1.2rem;
-      text-decoration: none;
-      display: inline-block;
-      margin: 0.8rem;
-      transition: all 0.3s;
+      background: var(--gold); color: #000; padding: 1.1rem 2.8rem; border-radius: 50px;
+      font-weight: 800; font-size: 1.2rem; text-decoration: none; display: inline-block;
+      margin: 0.8rem; transition: all 0.3s;
     }
-    .btn-primary:hover {
-      transform: translateY(-4px);
-      box-shadow: 0 20px 40px rgba(245,185,33,0.4);
-    }
-    .btn-outline {
-      background: transparent;
-      border: 2px solid white;
-      color: white;
-    }
-    .btn-outline:hover {
-      background: white;
-      color: #000;
-    }
+    .btn-primary:hover { transform: translateY(-4px); box-shadow: 0 20px 40px rgba(245,185,33,0.4); }
+    .btn-outline { background: transparent; border: 2px solid white; color: white; }
+    .btn-outline:hover { background: white; color: #000; }
 
-    /* Rest of the page (unchanged but cleaned) */
     section { padding: 120px 0; }
     .bg-dark { background: var(--navy); color: white; }
     .container { max-width: 1200px; margin: 0 auto; padding: 0 2rem; }
     .section-title {
-      font-size: 3.5rem;
-      text-align: center;
-      margin-bottom: 4rem;
-      position: relative;
+      font-size: 3.5rem; text-align: center; margin-bottom: 4rem; position: relative;
     }
     .section-title::after {
-      content: '';
-      width: 80px;
-      height: 6px;
-      background: var(--gold);
-      display: block;
-      margin: 1rem auto;
-      border-radius: 3px;
+      content: ''; width: 80px; height: 6px; background: var(--gold);
+      display: block; margin: 1rem auto; border-radius: 3px;
     }
-    .impact-grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(380px, 1fr));
-      gap: 2rem;
-    }
+    .impact-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(380px, 1fr)); gap: 2rem; }
     .impact-card {
-      background: white;
-      color: #000;
-      border-radius: 16px;
-      padding: 2.5rem;
-      box-shadow: 0 20px 40px rgba(0,0,0,0.08);
-      border-left: 6px solid var(--gold);
-      transition: transform 0.3s, box-shadow 0.3s;
+      background: var(--card-bg); color: var(--text); border-radius: 16px; padding: 2.5rem;
+      box-shadow: 0 20px 40px rgba(0,0,0,0.08); border-left: 6px solid var(--gold);
+      transition: all 0.3s;
     }
-    .impact-card:hover {
-      transform: translateY(-12px);
-      box-shadow: 0 30px 60px rgba(0,0,0,0.15);
-    }
+    .impact-card:hover { transform: translateY(-12px); box-shadow: 0 30px 60px rgba(0,0,0,0.15); }
 
+    /* Extended Timeline */
     .timeline { position: relative; max-width: 1000px; margin: 0 auto; }
     .timeline::before { content: ''; position: absolute; width: 4px; background: var(--gold); top: 0; bottom: 0; left: 50%; margin-left: -2px; }
     .tl-item { padding: 2rem 3rem; position: relative; width: 50%; }
@@ -188,10 +147,9 @@
     .right { left: 50%; }
     .right::after { left: -12px; }
     .left::after { right: -12px; }
-    .tl-content { background: white; color: #000; padding: 2rem; border-radius: 12px; box-shadow: 0 10px 30px rgba(0,0,0,0.1); }
+    .tl-content { background: var(--card-bg); color: var(--text); padding: 2rem; border-radius: 12px; box-shadow: 0 10px 30px rgba(0,0,0,0.1); }
 
     .cta { background: linear-gradient(135deg, var(--blue), #0044cc); color: white; text-align: center; padding: 140px 0; }
-
     footer { background: #000; color: #666; text-align: center; padding: 3rem 0; }
 
     @media (max-width: 768px) {
@@ -199,24 +157,28 @@
       .tl-item::after { left: -12px !important; }
       .timeline::before { left: 16px; }
       .metrics { grid-template-columns: 1fr 1fr; }
-      .hero h1 { letter-spacing: -2px; }
     }
   </style>
 </head>
-<body>
+<body data-theme="dark"> <!-- Default to dark (executives love it) -->
 
-  <!-- HERO – NOW PERFECT ON ALL DEVICES -->
+  <!-- Dark Mode Toggle -->
+  <div class="theme-toggle" id="themeToggle" aria-label="Toggle dark mode">
+    <i class="fas fa-moon"></i>
+  </div>
+
+  <!-- Hero -->
   <section class="hero">
     <div class="hero-content">
       <h1>LUKE <span class="highlight">WOLTER</span></h1>
-      <div class="badge">VP Product Management • MBA</div>
+      <div class="badge">Product Management Leader • MBA</div>
       <p class="lead">
         I build and scale AI-powered product organizations that deliver $100M+ revenue at global scale.
       </p>
 
       <div class="metrics">
-        <div class="metric"><div class="metric-num">$350M+</div><div>Revenue Created</div></div>
-        <div class="metric"><div class="metric-num">8 yrs</div><div>EY Global Leadership</div></div>
+        <div class="metric"><div class="metric-num">$200M+</div><div>Revenue Created</div></div>
+        <div class="metric"><div class="metric-num">8+ yrs</div><div>EY Global Leadership</div></div>
         <div class="metric"><div class="metric-num">$9B</div><div>Portfolio Oversight</div></div>
         <div class="metric"><div class="metric-num">AI-First</div><div>GenAI Product Leader</div></div>
       </div>
@@ -227,14 +189,12 @@
       </div>
 
       <p style="margin-top: 4rem; opacity: 0.7; font-size:1.1rem;">
-        Ex-Accenture • EY • AOL • Yahoo! • U.S. Marine Corps
+        Ex-Accenture • EY • Equifax • AOL • Yahoo! • U.S. Marine Corps
       </p>
     </div>
   </section>
 
-  <!-- End Hero -->
-
-  <!-- Rest of site (unchanged from previous version) -->
+  <!-- Impact Highlights -->
   <section>
     <div class="container">
       <h2 class="section-title">Proven $350M+ Revenue Impact</h2>
@@ -259,19 +219,24 @@
     </div>
   </section>
 
+  <!-- Full Career Timeline -->
   <section class="bg-dark">
     <div class="container">
       <h2 class="section-title" style="color:white;">Career Timeline</h2>
       <div class="timeline">
-        <div class="tl-item left"><div class="tl-content"><h4>EY — Global Solution Management Director</h4><p class="small opacity-75">2017 – Present</p><p>Built foundation for $9B+ Managed Services business</p></div></div>
-        <div class="tl-item right"><div class="tl-content"><h4>AOL — GM & Head of Product</h4><p class="small opacity-75">2011 – 2015</p><p>$50M profitable revenue growth</p></div></div>
-        <div class="tl-item left"><div class="tl-content"><h4>Yahoo! — Sr Director Product Management</h4><p class="small opacity-75">2002 – 2010</p><p>$150M+ branded solutions business</p></div></div>
-        <div class="tl-item right"><div class="tl-content"><h4>Accenture — Consulting Manager</h4><p class="small opacity-75">1996 – 2001</p><p>Led $5M+ digital programs</p></div></div>
-        <div class="tl-item left"><div class="tl-content"><h4>U.S. Marine Corps — NCO</h4><p class="small opacity-75">1992 – 1998</p><p>Leadership under fire</p></div></div>
+        <div class="tl-item left"><div class="tl-content"><h4>EY — Global Solution Management Director</h4><p class="small opacity-75">2017 – Present</p><p>Built foundation for $9B+ Managed Services business • Led GenAI/ML fraud & SOC 2 automation</p></div></div>
+        <div class="tl-item right"><div class="tl-content"><h4>Equifax — Senior Product Manager</h4><p class="small opacity-75">2015 – 2017</p><p>Replatformed Equifax.com & MyEquifax • 30% engagement lift • 10M+ monthly users</p></div></div>
+        <div class="tl-item left"><div class="tl-content"><h4>AOL — GM & Head of Product</h4><p class="small opacity-75">2011 – 2015</p><p>$50M profitable revenue growth • Launched 5 media brands</p></div></div>
+        <div class="tl-item right"><div class="tl-content"><h4>Streamroll — Founder & Head of Product</h4><p class="small opacity-75">2010 – 2011</p><p>Bootstrapped SaaS to 1,300+ customers in year one</p></div></div>
+        <div class="tl-item left"><div class="tl-content"><h4>Yahoo! — Sr Director Product Management</h4><p class="small opacity-75">2002 – 2010</p><p>$150M+ branded solutions business with GM, Toyota, Southwest</p></div></div>
+        <div class="tl-item right"><div class="tl-content"><h4>XOR Data Exchange — Principal Product Manager</h4><p class="small opacity-75">2001 – 2002</p><p>Led Citgo.com & Empire BCBS patient portal launches</p></div></div>
+        <div class="tl-item left"><div class="tl-content"><h4>Accenture — Consulting Manager</h4><p class="small opacity-75">1996 – 2001</p><p>Led $5M+ digital transformations for Chase, CNA</p></div></div>
+        <div class="tl-item right"><div class="tl-content"><h4>U.S. Marine Corps — NCO</h4><p class="small opacity-75">1992 – 1998</p><p>Leadership under fire • National Defense Service Medal</p></div></div>
       </div>
     </div>
   </section>
 
+  <!-- CTA -->
   <section class="cta">
     <div class="container">
       <h2 style="font-size: 3.8rem; margin-bottom: 2rem;">Ready to build the next $1B product?</h2>
@@ -287,5 +252,32 @@
     </div>
   </footer>
 
+  <!-- Font Awesome for toggle icons -->
+  <script src="https://kit.fontawesome.com/1b3e9e2b5f.js" crossorigin="anonymous"></script>
+  <script>
+    const toggle = document.getElementById('themeToggle');
+    const body = document.body;
+    const icon = toggle.querySelector('i');
+
+    // Load saved theme
+    if (localStorage.getItem('theme') === 'light' || (!localStorage.getItem('theme') && window.matchMedia('(prefers-color-scheme: light)').matches)) {
+      body.setAttribute('data-theme', 'light');
+      icon.classList.replace('fa-moon', 'fa-sun');
+    } else {
+      body.set0Attribute('data-theme', 'dark');
+    }
+
+    toggle.addEventListener('click', () => {
+      if (body.getAttribute('data-theme') === 'dark') {
+        body.setAttribute('data-theme', 'light');
+        icon.classList.replace('fa-moon', 'fa-sun');
+        localStorage.setItem('theme', 'light');
+      } else {
+        body.setAttribute('data-theme', 'dark');
+        icon.classList.replace('fa-sun', 'fa-moon');
+        localStorage.setItem('theme', 'dark');
+      }
+    });
+  </script>
 </body>
 </html>
