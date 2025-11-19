@@ -321,6 +321,17 @@
       .metrics { grid-template-columns: 1fr 1fr; gap: 1.5rem; }
       .metric { padding: 1.8rem 1rem; min-height: 130px; }
     }
+      .impact-card h3,
+      .impact-card h4,
+      .impact-card p {
+        overflow-wrap: break-word;  /* Breaks long words to prevent overflow */
+        hyphens: auto;              /* Enables automatic hyphenation for better readability */
+      }
+
+      /* Target the flex headers in each case study card */
+      .impact-card > div[style*="display: flex; align-items: center"] {
+        flex-wrap: wrap;            /* Allows the title to move below the image if space is tight */
+      }
   </style>
 </head>
 <body>
@@ -385,16 +396,16 @@
         <div class="impact-card">
           <div style="display: flex; align-items: center;">
             <img src="https://logo.clearbit.com/ey.com"     alt="EY"     class="exp-logo"     style="height: 40px; width: auto; margin-right: 10px;">
-            <h3 style="color: #f5b921; margin: 0;">EY – Managing Director, $9B Managed Services Product Foundations → higher win rates, margins</h3>
+            <h3 style="color: #f5b921; margin: 0;">EY – Managing Director, Product Foundations & Lifecycle Management for a $9B Managed Services → higher win rates, margins</h3>
           </div>
           <p>Built and led global Solution Management function; established end-to-end solution lifecycle governance and investment framework for EY’s key growth driver.</p>
         </div>
         <div class="impact-card">
           <div style="display: flex; align-items: center;">
             <img src="https://logo.clearbit.com/yahoo.com" alt="Yahoo!" class="exp-logo" style="height: 40px; width: auto; margin-right: 10px;">
-            <h3 style="color: #f5b921; margin: 0;">Yahoo! – Product Leader, $150M+ Joint Product Development with GM/LandRover</h3>
+            <h3 style="color: #f5b921; margin: 0;">Yahoo! – Product Leader, $150M+ Revenue from Joint Product Development with Strategic Partners</h3>
           </div>
-          <p>Ideated & scaled 200+ co-branded products with customers such as GM, Toyota, HSBC, Southwest. Built repeatable platform generating $150M+ annual revenue.</p>
+          <p>Ideated & scaled 200+ joint products with customers such as GM, Toyota, HSBC, Southwest. Built repeatable platform generating $150M+ annual revenue.</p>
         </div>
         <div class="impact-card">
           <div style="display: flex; align-items: center;">
