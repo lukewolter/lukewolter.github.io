@@ -250,10 +250,16 @@
         box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3);
       }
       .main-nav .container {  /* Was: nav .container */
-        /* ... unchanged */
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 0 2rem;
       }
       .main-nav .logo {  /* Was: nav .logo */
-        /* ... unchanged */
+      font-size: 1.5rem;
+      font-weight: 900;
+      color: white;
+      text-decoration: none;
       }
       .main-nav ul {  /* Was: nav ul */
         list-style: none;
@@ -263,7 +269,12 @@
         padding: 0;
       }
       .main-nav a {  /* Was: nav a */
-        /* ... unchanged */
+      color: var(--text);
+      text-decoration: none;
+      font-weight: 600;
+      font-size: 0.95rem;
+      transition: color 0.3s ease;
+      padding: 0.5rem 0;
       }
       .main-nav a:hover {  /* Was: nav a:hover */
         color: var(--gold);
