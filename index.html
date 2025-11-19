@@ -82,7 +82,19 @@
       letter-spacing: -4px; 
       margin: 0 0 0.5rem; 
     }
-     .badge { 
+    .headshot {
+      width: 220px;
+      height: 220px;
+      border-radius: 50%;
+      object-fit: cover;
+      border: 6px solid var(--gold);
+      box-shadow: 0 20px 40px rgba(0,0,0,0.4);
+      margin-bottom: 1.5rem;
+    }
+    @media (max-width: 768px) {
+      .headshot { width: 180px; height: 180px; }
+    }
+    .badge { 
       display: inline-block; background: rgba(245,185,33,0.15); color: var(--gold); 
       padding: 0.5rem 1.2rem; border-radius: 50px; font-weight: 700; font-size: 1rem; 
       border: 1px solid rgba(245,185,33,0.3); margin-bottom: 1.5rem;
@@ -329,24 +341,23 @@
     </div>
   </nav>
 
-  <!-- Hero -->
+ <!-- HERO – NOW WITH HEADSHOT -->
   <section class="hero">
     <div class="hero-content">
+      <img src="headshot.jpg" alt="Luke Wolter – Product Management Leader" class="headshot">
       <h1>LUKE <span class="highlight">WOLTER</span></h1>
-      <div class="badge">Product Management Leader • MBA</div>
-      <p class="lead">
-        I build and scale SaaS products and organizations delivering revenue at global scale.
-      </p>
+      <div class="badge">Product Management Leader • MBA • AI-First Leader</div>
+      <p class="lead">I scale product organizations that deliver innovation and revenue outcomes in SaaS, fintech, and media.</p>
 
       <div class="metrics">
-        <div class="metric"><div class="metric-num">$25+ yrs</div><label>Product Leadership Experience</label></div>
-        <div class="metric"><div class="metric-num">20+ ppl</div><label>Building High-Performing Teams</label></div>
-        <div class="metric"><div class="metric-num">AI-First</div><label>GenAI Product Leader</label></div>
+        <div class="metric"><div class="metric-num">$200M+</div><label>Revenue Created & Influenced</label></div>
+        <div class="metric"><div class="metric-num">25+ Years</div><label>Product Leadership</label></div>
+        <div class="metric"><div class="metric-num">P&L</div><label>Full Ownership Experience</label></div>
       </div>
 
       <div style="margin-top: 3rem;">
-        <a href="https://calendly.com/lukewolter" class="btn-primary">Schedule Time via Calendly</a>
- <!--       <a href="Luke_Wolter_VP_Product_Briefing_2025.pdf" class="btn-primary btn-outline" download>Download Briefing Deck (PDF)</a> -->
+        <a href="https://calendly.com/lukewolter" class="btn-primary">Schedule Introductory Call</a>
+        <a href="Luke_Wolter_Resume_2025.pdf" class="btn-primary btn-outline" download>Download Resume</a>
       </div>
         
           <div class="logo-row py-5">
@@ -543,8 +554,8 @@
 <section id="ai-toolbelt" style="padding: 100px 0; background: rgba(30,41,59,0.8);">
     <div class="container">
         <div style="text-align: center; margin-bottom: 4rem; max-width: 900px; margin-left: auto; margin-right: auto;">
-            <h2 class="section-title">2025 AI Toolbelt – My Daily Velocity Multiplier</h2>
-            <p class="lead">I don't just talk about agentic AI — I use it daily. Here are the exact tools I use to 10x velocity for myself and my teams.</p>
+            <h2 class="section-title">2025 AI Toolbelt – How I Weaponize AI to 5-10x organization Velocity</h2>
+            <p class="lead">I don't just talk about agentic AI — I use it daily. Here are the exact tools for myself and my teams.</p>
         </div>
 
         <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 2rem; max-width: 1200px; margin: 0 auto;">
