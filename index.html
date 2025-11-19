@@ -99,7 +99,8 @@
       padding: 0.5rem 1.2rem; border-radius: 40px; font-weight: 700; font-size: 1rem; 
       border: 1px solid rgba(245,185,33,0.3); margin-bottom: 1.5rem;
     }
-    .lead { font-size: clamp(1.4rem, 4vw, 1.8rem); max-width: 900px; margin: 2rem auto; opacity: 0.95; }
+    .lead { font-size: clamp(1.4rem, 4vw, 1.8rem); max-width: 900px; margin: 2rem auto; opacity: 0.95; 
+    }
 
     /* Metrics – Fixed overflow + better mobile fit */
     .metrics {
@@ -228,8 +229,8 @@
     }
     .hover-lift {
     transition: all 0.3s ease;
-}
-.hover-lift:hover {
+    }
+    .hover-lift:hover {
         transform: translateY(-8px);
         background: rgba(255,255,255,0.15) !important;
         box-shadow: 0 10px 30px rgba(0,0,0,0.4);
@@ -289,7 +290,12 @@
       font-size: 1.5rem;
       cursor: pointer;
     }
-
+      a[href^="#"]:hover {
+        background: var(--gold);
+        color: #000 !important;
+        box-shadow: 0 4px 12px rgba(245,185,33,0.4);
+        transform: translateY(-2px);
+      }
     @media (max-width: 768px) {
       nav ul {
         position: fixed;
@@ -320,13 +326,7 @@
       .timeline::before { left: 16px; }
       .metrics { grid-template-columns: 1fr 1fr; gap: 1.5rem; }
       .metric { padding: 1.8rem 1rem; min-height: 130px; }
-    }
-    a[href^="#"]:hover {
-  background: var(--gold);
-  color: #000 !important;
-  box-shadow: 0 4px 12px rgba(245,185,33,0.4);
-  transform: translateY(-2px);
-}
+      }
   </style>
 </head>
 <body>
@@ -435,7 +435,7 @@
       <div class="impact-grid" style="display: grid; grid-template-columns: repeat(1, 1fr); gap: 40px; max-width: 1000px; margin: 0 auto;">
           
           <!-- EY Case -->
-          <div class="impact-card" style="background: rgba(255,255,255,0.05); border-radius: 12px; padding: 32px; backdrop-filter: blur(10px);">
+          <div class="impact-card" id="ey-case" style="background: rgba(255,255,255,0.05); border-radius: 12px; padding: 32px; backdrop-filter: blur(10px);">
             <div style="display: flex; align-items: center; margin-bottom: 24px;">
               <img src="https://logo.clearbit.com/ey.com" alt="EY" class="exp-logo" style="height: 50px; width: auto; margin-right: 10px;">
               <h3 style="color: #f5b921; font-size: 1.5rem; line-height: 1.3; margin: 0;">
@@ -468,7 +468,7 @@
           </div>
 
           <!-- AOL Case -->
-          <div class="impact-card" style="background: rgba(255,255,255,0.05); border-radius: 12px; padding: 32px; backdrop-filter: blur(10px);">
+          <div class="impact-card" id="aol-case" style="background: rgba(255,255,255,0.05); border-radius: 12px; padding: 32px; backdrop-filter: blur(10px);">
             <div style="display: flex; align-items: center; margin-bottom: 24px;">
             <img src="https://logo.clearbit.com/aol.com"     alt="AOL"     class="exp-logo"     style="height: 50px; width: auto; margin-right: 10px;">
             <h3 style="color: #f5b921; font-size: 1.5rem; line-height: 1.3; margin: 0;">
@@ -500,7 +500,7 @@
           </div>
 
           <!-- Streamroll Case -->
-          <div class="impact-card" style="background: rgba(255,255,255,0.05); border-radius: 12px; padding: 32px; backdrop-filter: blur(10px);">
+          <div class="impact-card" id="streamroll-case" style="background: rgba(255,255,255,0.05); border-radius: 12px; padding: 32px; backdrop-filter: blur(10px);">
             <div style="display: flex; align-items: center; margin-bottom: 24px;">            
                 <img src="https://logo.clearbit.com/streamroll.com"     alt="Streamroll"     class="exp-logo"     style="height: 50px; width: auto; margin-right: 10px;">
                 <h3 style="color: #f5b921; font-size: 1.5rem; line-height: 1.3; margin: 0;">
@@ -553,7 +553,7 @@
           </div>          
 
           <!-- The Product Lifecycle Tool -->
-          <div class="impact-card" style="background: rgba(255,255,255,0.05); border-radius: 12px; padding: 32px; backdrop-filter: blur(10px);">
+          <div class="impact-card" id="lifecycle-case" style="background: rgba(255,255,255,0.05); border-radius: 12px; padding: 32px; backdrop-filter: blur(10px);">
                 <h3 style="color: #60a5fa; font-size: 3rem; line-height: 1.3; margin: 0;">
                   Experimental <br>
                 </h3>       <div style="display: flex; align-items: center; margin-bottom: 24px;">            
@@ -604,7 +604,7 @@
           </div>
 
           <!-- The Rock Lore Vault Case -->
-          <div class="impact-card" style="background: rgba(255,255,255,0.05); border-radius: 12px; padding: 32px; backdrop-filter: blur(10px);">
+          <div class="impact-card" id="rocklore-case"style="background: rgba(255,255,255,0.05); border-radius: 12px; padding: 32px; backdrop-filter: blur(10px);">
                 <h3 style="color: #60a5fa; font-size: 3rem; line-height: 1.3; margin: 0;">
                   Experimental<br>
                 </h3>
