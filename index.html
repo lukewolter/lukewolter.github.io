@@ -99,8 +99,7 @@
       padding: 0.5rem 1.2rem; border-radius: 40px; font-weight: 700; font-size: 1rem; 
       border: 1px solid rgba(245,185,33,0.3); margin-bottom: 1.5rem;
     }
-    .lead { font-size: clamp(1.4rem, 4vw, 1.8rem); max-width: 900px; margin: 2rem auto; opacity: 0.95; 
-    }
+    .lead { font-size: clamp(1.4rem, 4vw, 1.8rem); max-width: 900px; margin: 2rem auto; opacity: 0.95; }
 
     /* Metrics – Fixed overflow + better mobile fit */
     .metrics {
@@ -217,7 +216,7 @@
     }
     .logo-row img {
         height: 30px;
-        opacity: 0.6;
+      opacity: 0.6;
         filter: grayscale(100%);
         /* Optional: add a smooth hover effect to restore color */
         transition: filter 0.4s ease;
@@ -229,110 +228,115 @@
     }
     .hover-lift {
     transition: all 0.3s ease;
-    }
-    .hover-lift:hover {
+}
+.hover-lift:hover {
         transform: translateY(-8px);
         background: rgba(255,255,255,0.15) !important;
         box-shadow: 0 10px 30px rgba(0,0,0,0.4);
     }
 
-          /* Sticky Navigation */
-      .main-nav {  /* Was: nav */
-        position: fixed;
-        top: 0;
-        left: 0;
-        right: 0;
-        background: rgba(10, 26, 47, 0.95);
-        backdrop-filter: blur(10px);
-        z-index: 1000;
-        padding: 1rem 0;
-        border-bottom: 1px solid rgba(245, 185, 33, 0.2);
-        box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3);
-      }
-      .main-nav .container {  /* Was: nav .container */
+    /* Sticky Navigation */
+    nav {
+      position: fixed;
+      top: 0;
+      left: 0;
+      right: 0;
+      background: rgba(10, 26, 47, 0.95);
+      backdrop-filter: blur(10px);
+      z-index: 1000;
+      padding: 1rem 0;
+      border-bottom: 1px solid rgba(245, 185, 33, 0.2);
+      box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3);
+    }
+    nav .container {
       display: flex;
       justify-content: space-between;
       align-items: center;
       padding: 0 2rem;
-      }
-      .main-nav .logo {  /* Was: nav .logo */
+    }
+    nav .logo {
       font-size: 1.5rem;
       font-weight: 900;
       color: white;
       text-decoration: none;
-      }
-      .main-nav ul {  /* Was: nav ul */
-        list-style: none;
-        display: flex;
-        gap: 2rem;
-        margin: 0;
-        padding: 0;
-      }
-      .main-nav a {  /* Was: nav a */
+    }
+    nav .logo span {
+      color: var(--gold);
+    }
+    nav ul {
+      list-style: none;
+      display: flex;
+      gap: 2rem;
+      margin: 0;
+      padding: 0;
+    }
+    nav a {
       color: var(--text);
       text-decoration: none;
       font-weight: 600;
       font-size: 0.95rem;
       transition: color 0.3s ease;
       padding: 0.5rem 0;
+    }
+    nav a:hover {
+      color: var(--gold);
+    }
+    .nav-toggle {
+      display: none;
+      background: none;
+      border: none;
+      color: white;
+      font-size: 1.5rem;
+      cursor: pointer;
+    }
+
+    @media (max-width: 768px) {
+      nav ul {
+        position: fixed;
+        top: 60px;
+        left: -100%;
+        width: 100%;
+        height: calc(100vh - 60px);
+        background: rgba(10, 26, 47, 0.98);
+        flex-direction: column;
+        gap: 0;
+        padding: 2rem 0;
+        transition: left 0.3s ease;
       }
-      .main-nav a:hover {  /* Was: nav a:hover */
-        color: var(--gold);
+      nav ul.active {
+        left: 0;
       }
-      a[href^="#"]:hover {
-        background: var(--gold);
-        color: #000 !important;
-        box-shadow: 0 4px 12px rgba(245,185,33,0.4);
-        transform: translateY(-2px);
+      nav ul li {
+        width: 100%;
+        text-align: center;
+        padding: 1rem 0;
+        border-bottom: 1px solid rgba(255, 255, 255, 0.1);
       }
-      @media (max-width: 768px) {
-        .main-nav ul {  /* Was: nav ul */
-          position: fixed;
-          top: 60px;
-          left: -100%;
-          width: 100%;
-          height: calc(100vh - 60px);
-          background: rgba(10, 26, 47, 0.98);
-          flex-direction: column;
-          gap: 0;
-          padding: 2rem 0;
-          transition: left 0.3s ease;
-        }
-        .main-nav ul.active {  /* Was: nav ul.active */
-          left: 0;
-        }
-        .main-nav ul li {  /* Was: nav ul li */
-          width: 100%;
-          text-align: center;
-          padding: 1rem 0;
-          border-bottom: 1px solid rgba(255, 255, 255, 0.1);
-        }
-        .nav-toggle {
-          display: block;
-        }
-        /* Leave other unrelated rules (e.g., .tl-item) unchanged */
+      .nav-toggle {
+        display: block;
+      }
       .tl-item { width: 100%; padding-left: 50px; padding-right: 20px; text-align: left !important; }
       .tl-item::after { left: -12px !important; }
       .timeline::before { left: 16px; }
       .metrics { grid-template-columns: 1fr 1fr; gap: 1.5rem; }
       .metric { padding: 1.8rem 1rem; min-height: 130px; }
-      }
+    }
   </style>
 </head>
 <body>
 
   <!-- Sticky Navigation -->
-  <nav class="main-nav">
+  <nav>
     <div class="container">
       <a href="#" class="logo">Luke <span>Wolter</span></a>
-      <button class="nav-toggle" onclick="document.querySelector('.main-nav ul').classList.toggle('active')">☰</button>
+      <button class="nav-toggle" onclick="document.querySelector('nav ul').classList.toggle('active')">☰</button>
       <ul>
-        <li><a href="#track-record" onclick="document.querySelector('.main-nav ul').classList.remove('active')">Track Record</a></li>
-        <li><a href="#case-studies" onclick="document.querySelector('.main-nav ul').classList.remove('active')">Case Studies</a></li>
-        <li><a href="#career-timeline" onclick="document.querySelector('.main-nav ul').classList.remove('active')">Career Timeline</a></li>
-        <li><a href="#certifications" onclick="document.querySelector('.main-nav ul').classList.remove('active')">Certifications</a></li>
-        <li><a href="#ai-toolbelt" onclick="document.querySelector('.main-nav ul').classList.remove('active')">AI Toolbelt</a></li>
-        <li><a href="#contact" onclick="document.querySelector('.main-nav ul').classList.remove('active')">Contact</a></li>
+        <li><a href="#track-record" onclick="document.querySelector('nav ul').classList.remove('active')">Track Record</a></li>
+        <li><a href="#case-studies" onclick="document.querySelector('nav ul').classList.remove('active')">Case Studies</a></li>
+        <li><a href="#career-timeline" onclick="document.querySelector('nav ul').classList.remove('active')">Career Timeline</a></li>
+        <li><a href="#certifications" onclick="document.querySelector('nav ul').classList.remove('active')">Certifications</a></li>
+        <li><a href="#ai-toolbelt" onclick="document.querySelector('nav ul').classList.remove('active')">AI Toolbelt</a></li>
+        <li><a href="#contact" onclick="document.querySelector('nav ul').classList.remove('active')">Contact</a></li>
       </ul>
     </div>
   </nav>
@@ -358,17 +362,17 @@
         
           <div class="logo-row py-5">
               <div class="container text-center">
-                <!-- Removed: <small class="text-white-50 d-block mb-4"> </small> -->
-                <div class="d-flex flex-wrap justify-content-center align-items-center gap-5">
-                  <img src="https://logo.clearbit.com/marines.com" alt="US Marines" class="exp-logo">
-                  <img src="https://logo.clearbit.com/accenture.com" alt="Accenture" class="exp-logo">
-                  <img src="https://logo.clearbit.com/yahoo.com" alt="Yahoo" class="exp-logo">
-                  <img src="https://logo.clearbit.com/equifax.com" alt="Equifax" class="exp-logo">
-                  <img src="https://logo.clearbit.com/aol.com" alt="AOL" class="exp-logo">
-                  <img src="https://logo.clearbit.com/ey.com" alt="EY" class="exp-logo">
-                </div>
+                  <small class="text-white-50 d-block mb-4"> </small>
+                  <div class="d-flex flex-wrap justify-content-center align-items-center gap-5">
+                      <img src="https://logo.clearbit.com/marines.com"     alt="US Marines"   class="exp-logo">
+                      <img src="https://logo.clearbit.com/accenture.com"  alt="Accenture"    class="exp-logo">
+                      <img src="https://logo.clearbit.com/yahoo.com"        alt="Yahoo"        class="exp-logo">
+                      <img src="https://logo.clearbit.com/equifax.com"      alt="Equifax"      class="exp-logo">
+                      <img src="https://logo.clearbit.com/aol.com"         alt="AOL"          class="exp-logo">
+                      <img src="https://logo.clearbit.com/ey.com"          alt="EY"           class="exp-logo">
+                  </div>
               </div>
-            </div>
+          </div>
 
     </div>
   </section>
@@ -410,22 +414,14 @@
   </section>
 
       <!-- Case Studies -->
-  <section id="case-studies" style="background: linear-gradient(135deg, #1e293b 0%, #0f172a 100%); padding: 120px 0; color: white;">
-    <div class="container">
-      <h2 class="section-title" style="color: white; text-align: center; margin-bottom: 60px;">Leadership Case Studies</h2>
-<!--      <nav style="background: rgba(10, 26, 47, 0.95); backdrop-filter: blur(10px); border: 1px solid rgba(245, 185, 33, 0.2); border-radius: 50px; padding: 0.5rem; margin: 0 auto 4rem; max-width: 800px; box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3);">
-        <ul style="list-style: none; display: flex; justify-content: center; align-items: center; gap: 1rem; margin: 0; padding: 0; flex-wrap: wrap;">
-          <li><a href="#ey-case" style="color: var(--text); text-decoration: none; font-weight: 600; font-size: 0.95rem; padding: 0.75rem 1.5rem; border-radius: 40px; transition: all 0.3s ease; border: 1px solid rgba(245, 185, 33, 0.3);">EY</a></li>
-          <li><a href="#aol-case" style="color: var(--text); text-decoration: none; font-weight: 600; font-size: 0.95rem; padding: 0.75rem 1.5rem; border-radius: 40px; transition: all 0.3s ease; border: 1px solid rgba(245, 185, 33, 0.3);">AOL</a></li>
-          <li><a href="#streamroll-case" style="color: var(--text); text-decoration: none; font-weight: 600; font-size: 0.95rem; padding: 0.75rem 1.5rem; border-radius: 40px; transition: all 0.3s ease; border: 1px solid rgba(245, 185, 33, 0.3);">Streamroll</a></li>
-          <li><a href="#lifecycle-case" style="color: var(--text); text-decoration: none; font-weight: 600; font-size: 0.95rem; padding: 0.75rem 1.5rem; border-radius: 40px; transition: all 0.3s ease; border: 1px solid rgba(245, 185, 33, 0.3);">Product Lifecycle</a></li>
-          <li><a href="#rocklore-case" style="color: var(--text); text-decoration: none; font-weight: 600; font-size: 0.95rem; padding: 0.75rem 1.5rem; border-radius: 40px; transition: all 0.3s ease; border: 1px solid rgba(245, 185, 33, 0.3);">Rock Lore Vault</a></li>
-        </ul>
-      </nav> -->
-      <div class="impact-grid" style="display: grid; grid-template-columns: repeat(1, 1fr); gap: 40px; max-width: 1000px; margin: 0 auto;">
+    <section id="case-studies" style="background: linear-gradient(135deg, #1e293b 0%, #0f172a 100%); padding: 120px 0; color: white;">
+      <div class="container">
+        <h2 class="section-title" style="color: white; text-align: center; margin-bottom: 60px;">Leadership Case Studies</h2>
+        
+        <div class="impact-grid" style="display: grid; grid-template-columns: repeat(1, 1fr); gap: 40px; max-width: 1000px; margin: 0 auto;">
           
           <!-- EY Case -->
-          <div class="impact-card" id="ey-case" style="background: rgba(255,255,255,0.05); border-radius: 12px; padding: 32px; backdrop-filter: blur(10px);padding-top: 80px;  margin-top: -80px;">
+          <div class="impact-card" style="background: rgba(255,255,255,0.05); border-radius: 12px; padding: 32px; backdrop-filter: blur(10px);">
             <div style="display: flex; align-items: center; margin-bottom: 24px;">
               <img src="https://logo.clearbit.com/ey.com" alt="EY" class="exp-logo" style="height: 50px; width: auto; margin-right: 10px;">
               <h3 style="color: #f5b921; font-size: 1.5rem; line-height: 1.3; margin: 0;">
@@ -458,7 +454,7 @@
           </div>
 
           <!-- AOL Case -->
-          <div class="impact-card" id="aol-case" style="background: rgba(255,255,255,0.05); border-radius: 12px; padding: 32px; backdrop-filter: blur(10px); padding-top: 80px;  margin-top: -80px;">
+          <div class="impact-card" style="background: rgba(255,255,255,0.05); border-radius: 12px; padding: 32px; backdrop-filter: blur(10px);">
             <div style="display: flex; align-items: center; margin-bottom: 24px;">
             <img src="https://logo.clearbit.com/aol.com"     alt="AOL"     class="exp-logo"     style="height: 50px; width: auto; margin-right: 10px;">
             <h3 style="color: #f5b921; font-size: 1.5rem; line-height: 1.3; margin: 0;">
@@ -490,7 +486,7 @@
           </div>
 
           <!-- Streamroll Case -->
-          <div class="impact-card" id="streamroll-case" style="background: rgba(255,255,255,0.05); border-radius: 12px; padding: 32px; backdrop-filter: blur(10px); padding-top: 80px;  margin-top: -80px;">
+          <div class="impact-card" style="background: rgba(255,255,255,0.05); border-radius: 12px; padding: 32px; backdrop-filter: blur(10px);">
             <div style="display: flex; align-items: center; margin-bottom: 24px;">            
                 <img src="https://logo.clearbit.com/streamroll.com"     alt="Streamroll"     class="exp-logo"     style="height: 50px; width: auto; margin-right: 10px;">
                 <h3 style="color: #f5b921; font-size: 1.5rem; line-height: 1.3; margin: 0;">
@@ -543,7 +539,7 @@
           </div>          
 
           <!-- The Product Lifecycle Tool -->
-          <div class="impact-card" id="lifecycle-case" style="background: rgba(255,255,255,0.05); border-radius: 12px; padding: 32px; backdrop-filter: blur(10px); padding-top: 80px;  margin-top: -80px;">
+          <div class="impact-card" style="background: rgba(255,255,255,0.05); border-radius: 12px; padding: 32px; backdrop-filter: blur(10px);">
                 <h3 style="color: #60a5fa; font-size: 3rem; line-height: 1.3; margin: 0;">
                   Experimental <br>
                 </h3>       <div style="display: flex; align-items: center; margin-bottom: 24px;">            
@@ -594,11 +590,11 @@
           </div>
 
           <!-- The Rock Lore Vault Case -->
-          <div class="impact-card" id="rocklore-case"style="background: rgba(255,255,255,0.05); border-radius: 12px; padding: 32px; backdrop-filter: blur(10px); padding-top: 80px;  margin-top: -80px;">
-                <h3 style="color: #60a5fa; font-size: 3rem; line-height: 1.3; margin: 0;">
+          <div class="impact-card" style="background: rgba(255,255,255,0.05); border-radius: 12px; padding: 32px; backdrop-filter: blur(10px);">
+            <div style="display: flex; align-items: center; margin-bottom: 24px;">            
+                <h3 style="color: #f5b921; font-size: 3rem; line-height: 1.3; margin: 0;">
                   Experimental<br>
                 </h3>
-            <div style="display: flex; align-items: center; margin-bottom: 24px;">            
               <img src="https://logo.clearbit.com/youtube.com"     alt="YouTube"     class="exp-logo"     style="height: 50px; width: auto; margin-right: 10px;">
                 <h3 style="color: #f5b921; font-size: 1.5rem; line-height: 1.3; margin: 0;">
                   The Rock Lore Vault — 100% AI-Orchestrated/Generated Content Platform
@@ -642,13 +638,13 @@
     <div class="container">
       <h2 class="section-title" style="color:white;">Career Timeline</h2>
       <div class="timeline">
-        <div class="tl-item left"><div class="tl-content"><h4>EY — Managing Director - Global Solution Management</h4><p class="small opacity-75">2017 – Present</p><p>Built product lifecycle foundations for $9B+ B2B business</p></div></div>
+        <div class="tl-item left"><div class="tl-content"><h4>EY — Global Solution Management Director</h4><p class="small opacity-75">2017 – Present</p><p>Built product lifecycle foundations for $9B+ B2B business</p></div></div>
         <div class="tl-item right"><div class="tl-content"><h4>Equifax — Senior Product Manager</h4><p class="small opacity-75">2015 – 2017</p><p>Replatformed Equifax.com & MyEquifax • 30% engagement lift • 10M+ monthly users</p></div></div>
-        <div class="tl-item left"><div class="tl-content"><h4>AOL — General Manager - Lifestyles</h4><p class="small opacity-75">2011 – 2015</p><p>$50M profitable revenue growth • Launched 5 media brands • created a new ComScore audience leader</p></div></div>
+        <div class="tl-item left"><div class="tl-content"><h4>AOL — GM & Head of Product</h4><p class="small opacity-75">2011 – 2015</p><p>$50M profitable revenue growth • Launched 5 media brands • created a new ComScore audience leader</p></div></div>
         <div class="tl-item right"><div class="tl-content"><h4>Streamroll — Founder & Head of Product</h4><p class="small opacity-75">2010 – 2011</p><p>Bootstrapped a SaaS prodcut to 1,300+ customers in year one</p></div></div>
-        <div class="tl-item left"><div class="tl-content"><h4>Yahoo! — Senior Director - Product Management</h4><p class="small opacity-75">2002 – 2010</p><p>$150M+ branded solutions business creating joint products with customers such as GM, Toyota, Southwest</p></div></div>
-        <div class="tl-item right"><div class="tl-content"><h4>XOR — Principal - Product Management</h4><p class="small opacity-75">2001 – 2002</p><p>Led Citgo.com & Empire BCBS patient portal launches</p></div></div>
-        <div class="tl-item left"><div class="tl-content"><h4>Accenture — Manager - Consulting</h4><p class="small opacity-75">1996 – 2001</p><p>Led $5M+ digital transformations for Chase, CNA, and American Express</p></div></div>
+        <div class="tl-item left"><div class="tl-content"><h4>Yahoo! — Sr Director Product Management</h4><p class="small opacity-75">2002 – 2010</p><p>$150M+ branded solutions business creating joint products with customers such as GM, Toyota, Southwest</p></div></div>
+        <div class="tl-item right"><div class="tl-content"><h4>XOR — Principal Product Manager</h4><p class="small opacity-75">2001 – 2002</p><p>Led Citgo.com & Empire BCBS patient portal launches</p></div></div>
+        <div class="tl-item left"><div class="tl-content"><h4>Accenture — Consulting Manager</h4><p class="small opacity-75">1996 – 2001</p><p>Led $5M+ digital transformations for Chase, CNA, and American Express</p></div></div>
         <div class="tl-item right"><div class="tl-content"><h4>U.S. Marine Corps — NCO</h4><p class="small opacity-75">1992 – 1998</p><p>Leadership under fire • National Defense Service Medal</p></div></div>
       </div>
     </div>
@@ -674,7 +670,7 @@
 <section id="ai-toolbelt" style="padding: 100px 0; background: rgba(30,41,59,0.8);">
     <div class="container">
         <div style="text-align: center; margin-bottom: 4rem; max-width: 900px; margin-left: auto; margin-right: auto;">
-            <h2 class="section-title">2025 AI Toolbelt<br>How I Weaponize AI to 5-10x Velocity</h2>
+            <h2 class="section-title">2025 AI Toolbelt – How I Weaponize AI to 5-10x organization Velocity</h2>
             <p class="lead">I don't just talk about agentic AI — I use it daily. Here are the exact tools for myself and my teams.</p>
         </div>
 
