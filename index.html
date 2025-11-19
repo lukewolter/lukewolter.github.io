@@ -236,91 +236,70 @@
         box-shadow: 0 10px 30px rgba(0,0,0,0.4);
     }
 
-    /* Sticky Navigation */
-    nav {
-      position: fixed;
-      top: 0;
-      left: 0;
-      right: 0;
-      background: rgba(10, 26, 47, 0.95);
-      backdrop-filter: blur(10px);
-      z-index: 1000;
-      padding: 1rem 0;
-      border-bottom: 1px solid rgba(245, 185, 33, 0.2);
-      box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3);
-    }
-    nav .container {
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      padding: 0 2rem;
-    }
-    nav .logo {
-      font-size: 1.5rem;
-      font-weight: 900;
-      color: white;
-      text-decoration: none;
-    }
-    nav .logo span {
-      color: var(--gold);
-    }
-    nav ul {
-      list-style: none;
-      display: flex;
-      gap: 2rem;
-      margin: 0;
-      padding: 0;
-    }
-    nav a {
-      color: var(--text);
-      text-decoration: none;
-      font-weight: 600;
-      font-size: 0.95rem;
-      transition: color 0.3s ease;
-      padding: 0.5rem 0;
-    }
-    nav a:hover {
-      color: var(--gold);
-    }
-    .nav-toggle {
-      display: none;
-      background: none;
-      border: none;
-      color: white;
-      font-size: 1.5rem;
-      cursor: pointer;
-    }
+          /* Sticky Navigation */
+      .main-nav {  /* Was: nav */
+        position: fixed;
+        top: 0;
+        left: 0;
+        right: 0;
+        background: rgba(10, 26, 47, 0.95);
+        backdrop-filter: blur(10px);
+        z-index: 1000;
+        padding: 1rem 0;
+        border-bottom: 1px solid rgba(245, 185, 33, 0.2);
+        box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3);
+      }
+      .main-nav .container {  /* Was: nav .container */
+        /* ... unchanged */
+      }
+      .main-nav .logo {  /* Was: nav .logo */
+        /* ... unchanged */
+      }
+      .main-nav ul {  /* Was: nav ul */
+        list-style: none;
+        display: flex;
+        gap: 2rem;
+        margin: 0;
+        padding: 0;
+      }
+      .main-nav a {  /* Was: nav a */
+        /* ... unchanged */
+      }
+      .main-nav a:hover {  /* Was: nav a:hover */
+        color: var(--gold);
+      }
       a[href^="#"]:hover {
         background: var(--gold);
         color: #000 !important;
         box-shadow: 0 4px 12px rgba(245,185,33,0.4);
         transform: translateY(-2px);
       }
-    @media (max-width: 768px) {
-      nav ul {
-        position: fixed;
-        top: 60px;
-        left: -100%;
-        width: 100%;
-        height: calc(100vh - 60px);
-        background: rgba(10, 26, 47, 0.98);
-        flex-direction: column;
-        gap: 0;
-        padding: 2rem 0;
-        transition: left 0.3s ease;
-      }
-      nav ul.active {
-        left: 0;
-      }
-      nav ul li {
-        width: 100%;
-        text-align: center;
-        padding: 1rem 0;
-        border-bottom: 1px solid rgba(255, 255, 255, 0.1);
-      }
-      .nav-toggle {
-        display: block;
-      }
+      @media (max-width: 768px) {
+        .main-nav ul {  /* Was: nav ul */
+          position: fixed;
+          top: 60px;
+          left: -100%;
+          width: 100%;
+          height: calc(100vh - 60px);
+          background: rgba(10, 26, 47, 0.98);
+          flex-direction: column;
+          gap: 0;
+          padding: 2rem 0;
+          transition: left 0.3s ease;
+        }
+        .main-nav ul.active {  /* Was: nav ul.active */
+          left: 0;
+        }
+        .main-nav ul li {  /* Was: nav ul li */
+          width: 100%;
+          text-align: center;
+          padding: 1rem 0;
+          border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+        }
+        .nav-toggle {
+          display: block;
+        }
+        /* Leave other unrelated rules (e.g., .tl-item) unchanged */
       .tl-item { width: 100%; padding-left: 50px; padding-right: 20px; text-align: left !important; }
       .tl-item::after { left: -12px !important; }
       .timeline::before { left: 16px; }
@@ -332,17 +311,17 @@
 <body>
 
   <!-- Sticky Navigation -->
-  <nav>
+  <nav class="main-nav">
     <div class="container">
       <a href="#" class="logo">Luke <span>Wolter</span></a>
-      <button class="nav-toggle" onclick="document.querySelector('nav ul').classList.toggle('active')">☰</button>
+      <button class="nav-toggle" onclick="document.querySelector('.main-nav ul').classList.toggle('active')">☰</button>
       <ul>
-        <li><a href="#track-record" onclick="document.querySelector('nav ul').classList.remove('active')">Track Record</a></li>
-        <li><a href="#case-studies" onclick="document.querySelector('nav ul').classList.remove('active')">Case Studies</a></li>
-        <li><a href="#career-timeline" onclick="document.querySelector('nav ul').classList.remove('active')">Career Timeline</a></li>
-        <li><a href="#certifications" onclick="document.querySelector('nav ul').classList.remove('active')">Certifications</a></li>
-        <li><a href="#ai-toolbelt" onclick="document.querySelector('nav ul').classList.remove('active')">AI Toolbelt</a></li>
-        <li><a href="#contact" onclick="document.querySelector('nav ul').classList.remove('active')">Contact</a></li>
+        <li><a href="#track-record" onclick="document.querySelector('.main-nav ul').classList.remove('active')">Track Record</a></li>
+        <li><a href="#case-studies" onclick="document.querySelector('.main-nav ul').classList.remove('active')">Case Studies</a></li>
+        <li><a href="#career-timeline" onclick="document.querySelector('.main-nav ul').classList.remove('active')">Career Timeline</a></li>
+        <li><a href="#certifications" onclick="document.querySelector('.main-nav ul').classList.remove('active')">Certifications</a></li>
+        <li><a href="#ai-toolbelt" onclick="document.querySelector('.main-nav ul').classList.remove('active')">AI Toolbelt</a></li>
+        <li><a href="#contact" onclick="document.querySelector('.main-nav ul').classList.remove('active')">Contact</a></li>
       </ul>
     </div>
   </nav>
